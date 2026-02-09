@@ -1,29 +1,77 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    
-    .glass-nav {
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(251, 191, 36, 0.2);
-    }
-    
-    .premium-gradient {
-        background: radial-gradient(circle at top right, #1e293b, #0f172a);
-    }
-
-    .gold-glow:hover {
-        box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
-        transform: translateY(-2px);
-    }
-
-    /* Custom Chariot Animation for your logo */
-    @keyframes rotateWheel {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    .wheel-animate { animation: rotateWheel 20s linear infinite; }
+    :root { --gold: #D4AF37; --platinum: #E5E4E2; --slate-dark: #0F172A; }
+    body { background-color: var(--slate-dark); color: white; font-family: 'Inter', sans-serif; }
+    .hero-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); }
+    .gold-gradient { background: linear-gradient(90deg, #D4AF37, #FBE106); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .service-card:hover { border-color: var(--gold); transform: translateY(-10px); transition: all 0.4s ease; }
 </style>
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] animate-pulse"></div>
+
+    <div class="container mx-auto px-6 relative z-10 text-center">
+        <div class="animate__animated animate__fadeInDown">
+            <span class="px-4 py-1 rounded-full border border-amber-500/30 text-amber-500 text-xs uppercase tracking-[0.3em] mb-8 inline-block">
+                Precision Political Intelligence
+            </span>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight">
+                SARATHI <span class="gold-gradient text-white">VISION</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 font-light">
+                Led by <span class="text-white font-bold">Dr. Ganesh Patil (PhD)</span>. We transform unpredictable electoral shifts into <span class="text-amber-500">calculated victories</span> using scientific 6-pillar analysis.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 animate__animated animate__fadeInUp animate__delay-1s">
+            <button class="bg-amber-500 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+                Secure Your Victory
+            </button>
+            <button class="glass-nav border border-white/20 px-10 py-4 rounded-full font-bold hover:bg-white/10 transition">
+                View 67-Point Roadmap
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-black/50">
+    <div class="container mx-auto px-6">
+        <div class="flex justify-between items-end mb-16">
+            <div>
+                <h2 class="text-4xl font-bold mb-2">The Pillars of <span class="text-amber-500">Adharghatak</span></h2>
+                <p class="text-gray-500 italic">Scientific Research & Micro-Level Detailing</p>
+            </div>
+            <div class="hidden md:block text-right">
+                <span class="text-6xl font-bold opacity-10">67 SUB-ELEMENTS</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="service-card p-10 rounded-3xl bg-white/5 border border-white/10 transition">
+                <div class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Opinion Polls</h3>
+                <p class="text-gray-400 leading-relaxed">PhD-level scientific sampling to decode voter satisfaction and perceived national priorities.</p>
+            </div>
+
+            <div class="service-card p-10 rounded-3xl bg-white/5 border border-white/10 transition">
+                <div class="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Digital War Room</h3>
+                <p class="text-gray-400 leading-relaxed">Man-to-Man marking and real-time social media management to reshape your online image.</p>
+            </div>
+
+            <div class="service-card p-10 rounded-3xl bg-white/5 border border-white/10 transition">
+                <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Booth Intelligence</h3>
+                <p class="text-gray-400 leading-relaxed">Micro-level detailing for every booth, transforming members into "small leaders."</p>
+            </div>
+        </div>
+    </div>
+</section>
