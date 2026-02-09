@@ -1,126 +1,59 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarathi Visions | Dr. Ganesh Patil</title>
+    <title>Sarathi Visions | Political Strategy & Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        html { scroll-behavior: smooth; }
-        body { background: radial-gradient(circle at top right, #1e293b, #020617); color: #f8fafc; font-family: 'Inter', sans-serif; }
-        .gold-glow { color: #fbbf24; text-shadow: 0 0 15px rgba(251, 191, 36, 0.3); }
+        :root { --navy: #020617; --gold: #fbbf24; }
+        body { background: var(--navy); color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .gold-glow { color: var(--gold); text-shadow: 0 0 15px rgba(251, 191, 36, 0.3); }
         .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-        .service-card:hover { border: 1px solid #fbbf24; transform: translateY(-5px); transition: 0.3s; }
     </style>
 </head>
 <body>
-
-    <nav class="fixed w-full z-50 glass-panel py-4 px-8 flex justify-between items-center border-b border-white/5">
-        <div class="flex items-center space-x-3">
-            <span class="text-xl font-black italic">SARATHI <span class="gold-glow text-white">VISIONS</span></span>
-        </div>
-        <div class="flex space-x-4 text-[10px] font-bold uppercase tracking-widest">
-            <a href="#home" class="hover:text-amber-400">Home</a>
-            <a href="#about" class="hover:text-amber-400">About</a>
-            <a href="#services" class="hover:text-amber-400">Services</a>
-            <select onchange="changeLang(this.value)" class="bg-transparent border border-white/20 rounded px-1">
-                <option value="mr" class="bg-slate-900">MR</option>
-                <option value="en" class="bg-slate-900">EN</option>
-                <option value="bn" class="bg-slate-900">BN</option>
-            </select>
+    <nav class="fixed w-full z-50 glass-panel py-5 px-10 flex justify-between items-center">
+        <div class="text-xl font-black italic tracking-widest">SARATHI <span class="gold-glow text-white">VISIONS</span></div>
+        <div class="space-x-8 text-xs font-bold uppercase tracking-widest">
+            <a href="index.html" class="text-amber-500">Home</a>
+            <a href="analytics.html" class="hover:text-amber-500">Analytics</a>
+            <a href="war-room.html" class="hover:text-amber-400">War Room</a>
+            <a href="mobile-systems.html" class="hover:text-amber-400">Technology</a>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center justify-center text-center px-6">
-        <div class="animate__animated animate__fadeIn">
-            <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter" id="hero-title">विजयाची <span class="gold-glow">रणनीती</span></h1>
-            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10" id="hero-desc">डॉ. गणेश पाटील (PhD) यांच्या नेतृत्वाखालील वैज्ञानिक राजकीय सल्लागार संस्था.</p>
-            <a href="#services" class="bg-amber-500 text-black px-10 py-4 rounded-full font-bold uppercase hover:bg-white transition">Explore Now</a>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 px-6 bg-black/30">
-        <div class="container mx-auto flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 flex justify-center mb-10">
-                <img src="ganesh.jpg" alt="Founder" class="w-72 h-96 object-cover rounded-2xl border-2 border-amber-500 shadow-2xl">
+    <header class="min-h-screen flex items-center justify-center text-center pt-20">
+        <div class="max-w-4xl px-6">
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-none uppercase">Empowering <span class="gold-glow">Leaders.</span></h1>
+            <p class="text-xl text-slate-400 mb-12 leading-relaxed">
+                Applying scientific rigor and analytical precision to the art of political victory. Led by **Dr. Ganesh Patil (PhD)**.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="war-room.html" class="bg-amber-500 text-black px-12 py-4 rounded-full font-black uppercase hover:bg-white transition shadow-2xl">Enter War Room</a>
+                <a href="#about" class="border border-white/20 px-12 py-4 rounded-full font-black uppercase hover:bg-white/10 transition">Meet the Founder</a>
             </div>
-            <div class="md:w-1/2 md:pl-16">
-                <h2 class="text-4xl font-bold mb-6 italic" id="about-title">About the <span class="gold-glow text-white">Founder</span></h2>
-                <p class="text-lg text-slate-300 leading-relaxed mb-6" id="about-desc">
-                    डॉ. गणेश पाटील (PhD, SHUATS) यांनी राजकीय प्रचारात वैज्ञानिक अचूकता आणण्यासाठी 'सारथी व्हिजन'ची स्थापना केली आहे. आम्ही डेटा-ड्रिव्हन रणनीतीद्वारे उमेदवारांना विजयाकडे नेतो.
+        </div>
+    </header>
+
+    <section id="about" class="py-32 bg-black/40 px-10">
+        <div class="container mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2">
+                <img src="ganesh.jpg" alt="Dr. Ganesh Patil" class="rounded-3xl shadow-2xl border border-white/10 grayscale hover:grayscale-0 transition duration-700">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-black italic mb-6">THE <span class="gold-glow">STRATEGIST</span></h2>
+                <p class="text-lg text-slate-300 mb-6">
+                    Dr. Ganesh Patil (PhD, SHUATS) founded Sarathi Visions to revolutionize political campaigning with analytical science.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 px-6">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-widest italic" id="service-title">आमची <span class="gold-glow">रणनीती</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-panel p-10 rounded-3xl service-card">
-                    <h3 class="text-2xl font-bold mb-4 gold-glow" id="s1-title">Election Analytics</h3>
-                    <p class="text-sm text-slate-400" id="s1-desc">वैज्ञानिक डेटा मॉडेलिंग आणि PhD स्तरावरील सर्व्हे.</p>
-                </div>
-                <div class="glass-panel p-10 rounded-3xl service-card">
-                    <h3 class="text-2xl font-bold mb-4 gold-glow" id="s2-title">Digital War Room</h3>
-                    <p class="text-sm text-slate-400" id="s2-desc">रिअल-टाइम मॉनिटरिंग आणि विरोधकांच्या अफवांचे खंडन.</p>
-                </div>
-                <div class="glass-panel p-10 rounded-3xl service-card">
-                    <h3 class="text-2xl font-bold mb-4 gold-glow" id="s3-title">Mobile Systems</h3>
-                    <p class="text-sm text-slate-400" id="s3-desc">कार्यकर्त्यांचे नियोजन आणि ब्रँडिंगसाठी समर्पित मोबाईल ॲप.</p>
+                <p class="text-slate-400 mb-8 leading-relaxed">
+                    By leveraging modern digital infrastructure and a network of over 1,000 workers, he ensures that leaders connect authentically with their constituencies.
+                </p>
+                <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-widest text-amber-500">
+                    <div class="glass-panel p-4 rounded-lg">#Scientific_Optimization</div>
+                    <div class="glass-panel p-4 rounded-lg">#Data_Driven_Victory</div>
                 </div>
             </div>
         </div>
     </section>
-
-    <script>
-        const content = {
-            mr: {
-                heroT: "विजयाची <span class='gold-glow'>रणनीती</span>",
-                heroD: "डॉ. गणेश पाटील (PhD) यांच्या नेतृत्वाखालील वैज्ञानिक राजकीय सल्लागार संस्था.",
-                aboutT: "संस्थापकाबद्दल <span class='gold-glow text-white'>माहिती</span>",
-                aboutD: "डॉ. गणेश पाटील (PhD, SHUATS) यांनी राजकीय प्रचारात वैज्ञानिक अचूकता आणण्यासाठी 'सारथी व्हिजन'ची स्थापना केली आहे.",
-                sTitle: "आमची <span class='gold-glow'>रणनीती</span>",
-                s1T: "इलेक्शन ॲनालिटिक्स", s1D: "वैज्ञानिक डेटा मॉडेलिंग आणि PhD स्तरावरील सर्व्हे.",
-                s2T: "डिजिटल वॉर रूम", s2D: "रिअल-टाइम मॉनिटरिंग आणि अफवांचे खंडन.",
-                s3T: "मोबाईल सिस्टम्स", s3D: "कार्यकर्त्यांच्या नियोजनासाठी समर्पित ॲप."
-            },
-            en: {
-                heroT: "Engineering <span class='gold-glow'>Victory</span>",
-                heroD: "A scientific political consultancy led by Dr. Ganesh Patil (PhD).",
-                aboutT: "Meet the <span class='gold-glow text-white'>Founder</span>",
-                aboutD: "Dr. Ganesh Patil founded Sarathi Visions to bring analytical science to political success.",
-                sTitle: "Strategic <span class='gold-glow'>Portfolio</span>",
-                s1T: "Election Analytics", s1D: "Scientific data modeling and PhD-level research.",
-                s2T: "Digital War Room", s2D: "Real-time monitoring and narrative control.",
-                s3T: "Mobile Systems", s3D: "Custom apps for worker mobilization."
-            },
-            bn: {
-                heroT: "সাফল্যের <span class='gold-glow'>রণনীতি</span>",
-                heroD: "ডঃ গণেশ পাতিল (PhD) এর নেতৃত্বে বৈজ্ঞানিক পরামর্শদাতা সংস্থা।",
-                aboutT: "প্রতিষ্ঠাতা <span class='gold-glow text-white'>সম্পর্কে</span>",
-                aboutD: "ডঃ গণেশ পাতিল বৈজ্ঞানিক পদ্ধতিতে সাফল্যের জন্য সারথি ভিশন প্রতিষ্ঠা করেন।",
-                sTitle: "কৌশলগত <span class='gold-glow'>বিভাগ</span>",
-                s1T: "নির্বাচনী বিশ্লেষণ", s1D: "বৈজ্ঞানিক ডেটা মডেলিং এবং গবেষণা।",
-                s2T: "ডিজিটাল ওয়ার রুম", s2D: "রিয়েল-টাইম মনিটরিং এবং নিয়ন্ত্রণ।",
-                s3T: "মোবাইল সিস্টেম", s3D: "কর্মী ব্যবস্থাপনার জন্য কাস্টম অ্যাপ।"
-            }
-        };
-
-        function changeLang(lang) {
-            document.getElementById('hero-title').innerHTML = content[lang].heroT;
-            document.getElementById('hero-desc').innerText = content[lang].heroD;
-            document.getElementById('about-title').innerHTML = content[lang].aboutT;
-            document.getElementById('about-desc').innerText = content[lang].aboutD;
-            document.getElementById('service-title').innerHTML = content[lang].sTitle;
-            document.getElementById('s1-title').innerText = content[lang].s1T;
-            document.getElementById('s1-desc').innerText = content[lang].s1D;
-            document.getElementById('s2-title').innerText = content[lang].s2T;
-            document.getElementById('s2-desc').innerText = content[lang].s2D;
-            document.getElementById('s3-title').innerText = content[lang].s3T;
-            document.getElementById('s3-desc').innerText = content[lang].s3D;
-        }
-    </script>
 </body>
 </html>
