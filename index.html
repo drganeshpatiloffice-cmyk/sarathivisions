@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,128 +8,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         html { scroll-behavior: smooth; }
-        :root { --midnight: #020617; --gold: #fbbf24; --slate-glass: rgba(30, 41, 59, 0.7); }
-        
-        /* Premium Midnight Background */
-        body { 
-            background: radial-gradient(circle at top right, #1e293b, #020617, #000000);
-            color: #f8fafc;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .gold-glow { color: var(--gold); text-shadow: 0 0 15px rgba(251, 191, 36, 0.3); }
-        .glass-panel { background: var(--slate-glass); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-        
-        /* Service Card Hover */
-        .premium-card:hover { 
-            border: 1px solid var(--gold);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-
-        /* Detailed Modal */
-        .modal { display: none; position: fixed; z-index: 1000; inset: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(8px); }
+        body { background: radial-gradient(circle at top right, #1e293b, #020617); color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .gold-glow { color: #fbbf24; text-shadow: 0 0 15px rgba(251, 191, 36, 0.3); }
+        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .service-card:hover { border: 1px solid #fbbf24; transform: translateY(-5px); transition: 0.3s; }
     </style>
 </head>
 <body>
 
     <nav class="fixed w-full z-50 glass-panel py-4 px-8 flex justify-between items-center border-b border-white/5">
         <div class="flex items-center space-x-3">
-            <img src="logo.png" alt="" class="h-8 opacity-90"> 
-            <span class="text-xl font-black tracking-tighter uppercase italic">SARATHI <span class="gold-glow text-white">VISIONS</span></span>
+            <span class="text-xl font-black italic">SARATHI <span class="gold-glow text-white">VISIONS</span></span>
         </div>
-        <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-[0.2em]">
-            <a href="#home" class="hover:text-amber-400 transition">Home</a>
-            <a href="#services" class="hover:text-amber-400 transition">Portfolio</a>
-            <a href="#founder" class="hover:text-amber-400 transition">The Founder</a>
+        <div class="flex space-x-4 text-[10px] font-bold uppercase tracking-widest">
+            <a href="#home" class="hover:text-amber-400">Home</a>
+            <a href="#about" class="hover:text-amber-400">About</a>
+            <a href="#services" class="hover:text-amber-400">Services</a>
+            <select onchange="changeLang(this.value)" class="bg-transparent border border-white/20 rounded px-1">
+                <option value="mr" class="bg-slate-900">MR</option>
+                <option value="en" class="bg-slate-900">EN</option>
+                <option value="bn" class="bg-slate-900">BN</option>
+            </select>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center justify-center px-6 text-center pt-20">
-        <div class="animate__animated animate__fadeInUp">
-            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter">ENGINEERING <br><span class="gold-glow">VICTORY.</span></h1>
-            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Scientific Rigor Meets Strategic Political Excellence. <br>Led by **Dr. Ganesh Patil (PhD)**.
-            </p>
-            <a href="#services" class="bg-amber-500 text-black px-12 py-4 rounded-full font-black uppercase tracking-widest hover:bg-white transition-all shadow-2xl">
-                Enter War Room
-            </a>
+    <section id="home" class="min-h-screen flex items-center justify-center text-center px-6">
+        <div class="animate__animated animate__fadeIn">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter" id="hero-title">विजयाची <span class="gold-glow">रणनीती</span></h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10" id="hero-desc">डॉ. गणेश पाटील (PhD) यांच्या नेतृत्वाखालील वैज्ञानिक राजकीय सल्लागार संस्था.</p>
+            <a href="#services" class="bg-amber-500 text-black px-10 py-4 rounded-full font-bold uppercase hover:bg-white transition">Explore Now</a>
         </div>
     </section>
 
-    <section id="services" class="py-32 px-6">
-        <div class="container mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl font-black italic mb-4">OUR <span class="gold-glow">PORTFOLIO</span></h2>
-                <div class="h-1 w-20 bg-amber-500 mx-auto"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-panel p-10 rounded-3xl premium-card" onclick="openDetails('analytics')">
-                    <h3 class="text-2xl font-bold mb-4">Election Analytics</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Scientific voter data analysis and PhD-level sentiment surveys.</p>
-                    <p class="mt-6 text-amber-500 text-xs font-black tracking-widest uppercase">Select to Expand +</p>
-                </div>
-                <div class="glass-panel p-10 rounded-3xl premium-card" onclick="openDetails('campaign')">
-                    <h3 class="text-2xl font-bold mb-4">Digital Campaign</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Custom WhatsApp and Social Media ecosystems for 100k+ daily reach.</p>
-                    <p class="mt-6 text-amber-500 text-xs font-black tracking-widest uppercase">Select to Expand +</p>
-                </div>
-                <div class="glass-panel p-10 rounded-3xl premium-card" onclick="openDetails('systems')">
-                    <h3 class="text-2xl font-bold mb-4">Mobile Systems</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Dedicated Android/iOS apps for real-time worker loyalty tracking.</p>
-                    <p class="mt-6 text-amber-500 text-xs font-black tracking-widest uppercase">Select to Expand +</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="founder" class="py-32 px-6 border-t border-white/5">
+    <section id="about" class="py-24 px-6 bg-black/30">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 flex justify-center mb-16 md:mb-0 animate__animated animate__fadeInLeft">
-                <div class="relative">
-                    <img src="ganesh.jpg" alt="Dr. Ganesh Patil" class="w-80 h-96 object-cover rounded-2xl grayscale hover:grayscale-0 transition duration-700 shadow-2xl border border-white/10">
-                    <div class="absolute -bottom-6 -right-6 glass-panel p-6 rounded-xl">
-                        <p class="text-amber-500 font-black text-xl italic">DR. GANESH PATIL</p>
-                        <p class="text-xs text-slate-400 font-bold tracking-widest">FOUNDER & CEO</p>
-                    </div>
-                </div>
+            <div class="md:w-1/2 flex justify-center mb-10">
+                <img src="ganesh.jpg" alt="Founder" class="w-72 h-96 object-cover rounded-2xl border-2 border-amber-500 shadow-2xl">
             </div>
-            <div class="md:w-1/2 md:pl-20 animate__animated animate__fadeInRight">
-                <h2 class="text-4xl font-black italic mb-8">THE <span class="gold-glow">STRATEGIST</span></h2>
-                <p class="text-lg text-slate-300 leading-relaxed mb-8">
-                    Dr. Ganesh Patil (PhD, SHUATS) founded Sarathi Visions to revolutionize political campaigning. By applying scientific optimization and analytical rigor, he helps leaders build authentic connections with their constituencies.
+            <div class="md:w-1/2 md:pl-16">
+                <h2 class="text-4xl font-bold mb-6 italic" id="about-title">About the <span class="gold-glow text-white">Founder</span></h2>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6" id="about-desc">
+                    डॉ. गणेश पाटील (PhD, SHUATS) यांनी राजकीय प्रचारात वैज्ञानिक अचूकता आणण्यासाठी 'सारथी व्हिजन'ची स्थापना केली आहे. आम्ही डेटा-ड्रिव्हन रणनीतीद्वारे उमेदवारांना विजयाकडे नेतो.
                 </p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="glass-panel p-4 rounded-lg text-center font-bold text-xs uppercase tracking-widest">PhD Researcher</div>
-                    <div class="glass-panel p-4 rounded-lg text-center font-bold text-xs uppercase tracking-widest">Political Strategist</div>
-                </div>
             </div>
         </div>
     </section>
 
-    <div id="detailModal" class="modal flex items-center justify-center p-6" onclick="closeDetails()">
-        <div class="glass-panel max-w-2xl w-full p-12 rounded-3xl relative animate__animated animate__zoomIn" onclick="event.stopPropagation()">
-            <button class="absolute top-6 right-8 text-3xl font-light hover:text-amber-500" onclick="closeDetails()">&times;</button>
-            <div id="modalBody"></div>
+    <section id="services" class="py-24 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-widest italic" id="service-title">आमची <span class="gold-glow">रणनीती</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-10 rounded-3xl service-card">
+                    <h3 class="text-2xl font-bold mb-4 gold-glow" id="s1-title">Election Analytics</h3>
+                    <p class="text-sm text-slate-400" id="s1-desc">वैज्ञानिक डेटा मॉडेलिंग आणि PhD स्तरावरील सर्व्हे.</p>
+                </div>
+                <div class="glass-panel p-10 rounded-3xl service-card">
+                    <h3 class="text-2xl font-bold mb-4 gold-glow" id="s2-title">Digital War Room</h3>
+                    <p class="text-sm text-slate-400" id="s2-desc">रिअल-टाइम मॉनिटरिंग आणि विरोधकांच्या अफवांचे खंडन.</p>
+                </div>
+                <div class="glass-panel p-10 rounded-3xl service-card">
+                    <h3 class="text-2xl font-bold mb-4 gold-glow" id="s3-title">Mobile Systems</h3>
+                    <p class="text-sm text-slate-400" id="s3-desc">कार्यकर्त्यांचे नियोजन आणि ब्रँडिंगसाठी समर्पित मोबाईल ॲप.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <script>
         const content = {
-            analytics: `<h2 class="text-3xl font-black italic gold-glow mb-6 uppercase">Election Analytics</h2><p class="text-slate-300 leading-relaxed mb-6">Our analytics division utilizes scientific sampling and PhD-level data modeling to decode voter sentiment. We provide real-time reports that identify core issues within your constituency, allowing for a precise and effective manifesto.</p>`,
-            campaign: `<h2 class="text-3xl font-black italic gold-glow mb-6 uppercase">Digital Campaign</h2><p class="text-slate-300 leading-relaxed mb-6">We don't just post; we influence. Our digital team builds active ecosystems on WhatsApp, Instagram, and Facebook, reaching up to 1 lakh guaranteed local views daily. We specialize in viral narrative building and community mobilization.</p>`,
-            systems: `<h2 class="text-3xl font-black italic gold-glow mb-6 uppercase">Mobile Systems</h2><p class="text-slate-300 leading-relaxed mb-6">Sarathi Visions provides a proprietary Android/iOS platform for your campaign. This app manages 100 to 1,000 workers, providing them with co-branded content instantly and tracking their daily promotional activity and loyalty.</p>`
+            mr: {
+                heroT: "विजयाची <span class='gold-glow'>रणनीती</span>",
+                heroD: "डॉ. गणेश पाटील (PhD) यांच्या नेतृत्वाखालील वैज्ञानिक राजकीय सल्लागार संस्था.",
+                aboutT: "संस्थापकाबद्दल <span class='gold-glow text-white'>माहिती</span>",
+                aboutD: "डॉ. गणेश पाटील (PhD, SHUATS) यांनी राजकीय प्रचारात वैज्ञानिक अचूकता आणण्यासाठी 'सारथी व्हिजन'ची स्थापना केली आहे.",
+                sTitle: "आमची <span class='gold-glow'>रणनीती</span>",
+                s1T: "इलेक्शन ॲनालिटिक्स", s1D: "वैज्ञानिक डेटा मॉडेलिंग आणि PhD स्तरावरील सर्व्हे.",
+                s2T: "डिजिटल वॉर रूम", s2D: "रिअल-टाइम मॉनिटरिंग आणि अफवांचे खंडन.",
+                s3T: "मोबाईल सिस्टम्स", s3D: "कार्यकर्त्यांच्या नियोजनासाठी समर्पित ॲप."
+            },
+            en: {
+                heroT: "Engineering <span class='gold-glow'>Victory</span>",
+                heroD: "A scientific political consultancy led by Dr. Ganesh Patil (PhD).",
+                aboutT: "Meet the <span class='gold-glow text-white'>Founder</span>",
+                aboutD: "Dr. Ganesh Patil founded Sarathi Visions to bring analytical science to political success.",
+                sTitle: "Strategic <span class='gold-glow'>Portfolio</span>",
+                s1T: "Election Analytics", s1D: "Scientific data modeling and PhD-level research.",
+                s2T: "Digital War Room", s2D: "Real-time monitoring and narrative control.",
+                s3T: "Mobile Systems", s3D: "Custom apps for worker mobilization."
+            },
+            bn: {
+                heroT: "সাফল্যের <span class='gold-glow'>রণনীতি</span>",
+                heroD: "ডঃ গণেশ পাতিল (PhD) এর নেতৃত্বে বৈজ্ঞানিক পরামর্শদাতা সংস্থা।",
+                aboutT: "প্রতিষ্ঠাতা <span class='gold-glow text-white'>সম্পর্কে</span>",
+                aboutD: "ডঃ গণেশ পাতিল বৈজ্ঞানিক পদ্ধতিতে সাফল্যের জন্য সারথি ভিশন প্রতিষ্ঠা করেন।",
+                sTitle: "কৌশলগত <span class='gold-glow'>বিভাগ</span>",
+                s1T: "নির্বাচনী বিশ্লেষণ", s1D: "বৈজ্ঞানিক ডেটা মডেলিং এবং গবেষণা।",
+                s2T: "ডিজিটাল ওয়ার রুম", s2D: "রিয়েল-টাইম মনিটরিং এবং নিয়ন্ত্রণ।",
+                s3T: "মোবাইল সিস্টেম", s3D: "কর্মী ব্যবস্থাপনার জন্য কাস্টম অ্যাপ।"
+            }
         };
 
-        function openDetails(key) {
-            document.getElementById('modalBody').innerHTML = content[key];
-            document.getElementById('detailModal').style.display = 'flex';
-        }
-        function closeDetails() {
-            document.getElementById('detailModal').style.display = 'none';
+        function changeLang(lang) {
+            document.getElementById('hero-title').innerHTML = content[lang].heroT;
+            document.getElementById('hero-desc').innerText = content[lang].heroD;
+            document.getElementById('about-title').innerHTML = content[lang].aboutT;
+            document.getElementById('about-desc').innerText = content[lang].aboutD;
+            document.getElementById('service-title').innerHTML = content[lang].sTitle;
+            document.getElementById('s1-title').innerText = content[lang].s1T;
+            document.getElementById('s1-desc').innerText = content[lang].s1D;
+            document.getElementById('s2-title').innerText = content[lang].s2T;
+            document.getElementById('s2-desc').innerText = content[lang].s2D;
+            document.getElementById('s3-title').innerText = content[lang].s3T;
+            document.getElementById('s3-desc').innerText = content[lang].s3D;
         }
     </script>
 </body>
