@@ -1,77 +1,94 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 <style>
-    :root { --gold: #D4AF37; --platinum: #E5E4E2; --slate-dark: #0F172A; }
-    body { background-color: var(--slate-dark); color: white; font-family: 'Inter', sans-serif; }
-    .hero-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); }
-    .gold-gradient { background: linear-gradient(90deg, #D4AF37, #FBE106); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .service-card:hover { border-color: var(--gold); transform: translateY(-10px); transition: all 0.4s ease; }
+    html { scroll-behavior: smooth; } /* Smooth scroll effect */
+    body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+    .gold-glow { color: #D4AF37; text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+    .nav-link:hover { border-bottom: 2px solid #D4AF37; transition: 0.3s; }
+    .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
 </style>
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] animate-pulse"></div>
-
-    <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="animate__animated animate__fadeInDown">
-            <span class="px-4 py-1 rounded-full border border-amber-500/30 text-amber-500 text-xs uppercase tracking-[0.3em] mb-8 inline-block">
-                Precision Political Intelligence
-            </span>
-            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight">
-                SARATHI <span class="gold-gradient text-white">VISION</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 font-light">
-                Led by <span class="text-white font-bold">Dr. Ganesh Patil (PhD)</span>. We transform unpredictable electoral shifts into <span class="text-amber-500">calculated victories</span> using scientific 6-pillar analysis.
-            </p>
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 p-5">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter italic">SARATHI <span class="gold-glow text-white">VISIONS</span></div>
+        <div class="hidden md:flex space-x-10 font-semibold text-sm uppercase tracking-widest">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Strategic Services</a>
+            <a href="#warroom" class="nav-link">Digital War Room</a>
+            <a href="#founder" class="nav-link">The Founder</a>
         </div>
+    </div>
+</nav>
 
-        <div class="flex flex-wrap justify-center gap-6 animate__animated animate__fadeInUp animate__delay-1s">
-            <button class="bg-amber-500 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition shadow-[0_0_30px_rgba(245,158,11,0.3)]">
-                Secure Your Victory
-            </button>
-            <button class="glass-nav border border-white/20 px-10 py-4 rounded-full font-bold hover:bg-white/10 transition">
-                View 67-Point Roadmap
-            </button>
+<section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
+    <div class="text-center animate__animated animate__fadeIn">
+        <h1 class="text-6xl md:text-8xl font-black mb-6 leading-none">
+            ENGINEERING <br><span class="gold-glow">VICTORY.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12">
+            Led by **Dr. Ganesh Patil (PhD)**. We provide data-driven consultancy and innovative mobile solutions to transform your constituency.
+        </p>
+        <a href="#services" class="bg-white text-black px-12 py-4 rounded-full font-black hover:bg-[#D4AF37] transition duration-300">
+            BEGIN STRATEGY
+        </a>
+    </div>
+</section>
+
+<section id="services" class="py-32 px-6">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-black mb-16 text-center italic">OUR <span class="gold-glow">PORTFOLIO</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="glass-card p-10 rounded-3xl hover:border-[#D4AF37] transition duration-500">
+                <h3 class="text-2xl font-bold mb-4">Election Analytics</h3>
+                <p class="text-gray-400">Scientific voter data analysis and opinion surveys using PhD-level precision.</p>
+            </div>
+            <div class="glass-card p-10 rounded-3xl hover:border-[#D4AF37] transition duration-500">
+                <h3 class="text-2xl font-bold mb-4">Digital Campaign</h3>
+                <p class="text-gray-400">Custom WhatsApp and Social Media ecosystems for 100k+ daily local reach.</p>
+            </div>
+            <div class="glass-card p-10 rounded-3xl hover:border-[#D4AF37] transition duration-500">
+                <h3 class="text-2xl font-bold mb-4">Mobile Systems</h3>
+                <p class="text-gray-400">Dedicated Android/iOS application for real-time worker loyalty tracking and branding.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="py-24 bg-black/50">
-    <div class="container mx-auto px-6">
-        <div class="flex justify-between items-end mb-16">
-            <div>
-                <h2 class="text-4xl font-bold mb-2">The Pillars of <span class="text-amber-500">Adharghatak</span></h2>
-                <p class="text-gray-500 italic">Scientific Research & Micro-Level Detailing</p>
+<section id="warroom" class="py-32 bg-[#0A0A0A] px-6 border-y border-white/5">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-black mb-8 italic">THE <span class="gold-glow">WAR ROOM</span></h2>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-16">
+            Real-time monitoring, rapid response to opposition rumors, and narrative control systems.
+        </p>
+        <div class="glass-card max-w-4xl mx-auto p-6 rounded-2xl border border-white/10">
+            <div class="flex justify-between items-center border-b border-white/10 pb-4 mb-4">
+                <span class="text-xs font-mono text-gray-500">SYSTEM STATUS: ONLINE</span>
+                <span class="text-xs font-mono text-amber-500">NARRATIVE CONTROL ACTIVE</span>
             </div>
-            <div class="hidden md:block text-right">
-                <span class="text-6xl font-bold opacity-10">67 SUB-ELEMENTS</span>
+            <div class="h-48 flex items-end justify-center space-x-2">
+                <div class="w-10 bg-white/20 h-20 animate-pulse"></div>
+                <div class="w-10 bg-white/40 h-32 animate-pulse"></div>
+                <div class="w-10 bg-amber-500 h-44"></div>
+                <div class="w-10 bg-white/30 h-28 animate-pulse"></div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="service-card p-10 rounded-3xl bg-white/5 border border-white/10 transition">
-                <div class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-8">
-                    <svg class="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Opinion Polls</h3>
-                <p class="text-gray-400 leading-relaxed">PhD-level scientific sampling to decode voter satisfaction and perceived national priorities.</p>
-            </div>
-
-            <div class="service-card p-10 rounded-3xl bg-white/5 border border-white/10 transition">
-                <div class="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-8">
-                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Digital War Room</h3>
-                <p class="text-gray-400 leading-relaxed">Man-to-Man marking and real-time social media management to reshape your online image.</p>
-            </div>
-
-            <div class="service-card p-10 rounded-3xl bg-white/5 border border-white/10 transition">
-                <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-8">
-                    <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Booth Intelligence</h3>
-                <p class="text-gray-400 leading-relaxed">Micro-level detailing for every booth, transforming members into "small leaders."</p>
-            </div>
+<section id="founder" class="py-32 px-6">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 text-center">
+             <div class="w-72 h-72 rounded-full border-4 border-[#D4AF37] mx-auto overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.2)]">
+                <img src="YOUR_PHOTO_URL_HERE" alt="Dr. Ganesh Patil" class="w-full h-full object-cover grayscale">
+             </div>
+        </div>
+        <div class="md:w-1/2 md:pl-20">
+            <h2 class="text-4xl font-black mb-6 gold-glow italic">DR. GANESH PATIL</h2>
+            <p class="text-lg text-gray-400 leading-relaxed mb-6">
+                Holding a PhD from SHUATS, Dr. Patil brings scientific optimization and analytical rigor to political campaigning. He founded Sarathi Visions to revolutionize how local and regional leaders connect with their voters.
+            </p>
+            <button class="border-b-2 border-[#D4AF37] pb-1 font-bold tracking-widest hover:text-[#D4AF37] transition">READ HIS STORY</button>
         </div>
     </div>
 </section>
