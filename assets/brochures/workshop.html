@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Strategy Workshop - Brochure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap');
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+        }
+    </style>
+    <script>
+        const translations = {
+            en: {
+                workshopTitle: "Digital Strategy Workshop",
+                subtitle: "Master Modern Campaign Management",
+                overview: "Workshop Overview",
+                overviewDesc: "An intensive 4-hour workshop focusing on cutting-edge digital campaign strategies, voter engagement techniques, and real-time campaign management using modern tools and platforms.",
+                keyTopics: "Key Topics",
+                topic1: "Digital campaign infrastructure setup",
+                topic2: "Multi-channel campaign execution",
+                topic3: "Advanced targeting and personalization",
+                topic4: "Performance tracking and optimization",
+                topic5: "Crisis management in digital campaigns",
+                topic6: "Hands-on tool demonstrations",
+                eventDetails: "Event Details",
+                date: "Date:",
+                dateValue: "March 25, 2026",
+                time: "Time:",
+                timeValue: "2:00 PM - 6:00 PM (IST)",
+                location: "Locations:",
+                locationValue: "Mumbai, India (In-person) + Virtual Option Available",
+                attendees: "Who Should Attend:",
+                attendeesValue: "Campaign managers, digital strategists, political coordinators",
+                benefits: "Benefits",
+                benefit1: "Certificate of attendance",
+                benefit2: "Exclusive tool access and templates",
+                benefit3: "Networking with industry professionals",
+                benefit4: "Comprehensive workshop materials",
+                investment: "Investment",
+                earlyBird: "Early Bird: ₹9,999",
+                regular: "Regular: ₹12,999",
+                groupDiscounts: "Discounts available for group registrations",
+                registerToday: "Register Today",
+                registerMsg: "Limited seats available!",
+                email: "Email: workshops@sarathivisions.com",
+                whatsapp: "WhatsApp: +91 93594 35183",
+                printBrochure: "Print Brochure"
+            },
+            hi: {
+                workshopTitle: "डिजिटल रणनीति कार्यशाला",
+                subtitle: "आधुनिक अभियान प्रबंधन में निपुण हों",
+                overview: "कार्यशाला सारांश",
+                overviewDesc: "एक गहन 4-घंटे की कार्यशाला जो अत्याधुनिक डिजिटल अभियान रणनीतियों, मतदाता सहभागिता तकनीकों और आधुनिक उपकरणों और प्लेटफार्मों का उपयोग करके रीयल-टाइम अभियान प्रबंधन पर केंद्रित है।",
+                keyTopics: "मुख्य विषय",
+                topic1: "डिजिटल अभियान बुनियादी ढांचा सेटअप",
+                topic2: "मल्टी-चैनल अभियान निष्पादन",
+                topic3: "उन्नत लक्ष्यीकरण और व्यक्तिगतकरण",
+                topic4: "प्रदर्शन ट्रैकिंग और अनुकूलन",
+                topic5: "डिजिटल अभियानों में संकट प्रबंधन",
+                topic6: "हाथों-हाथ उपकरण प्रदर्शन",
+                eventDetails: "कार्यक्रम विवरण",
+                date: "तारीख:",
+                dateValue: "25 मार्च 2026",
+                time: "समय:",
+                timeValue: "2:00 PM - 6:00 PM (IST)",
+                location: "स्थान:",
+                locationValue: "मुंबई, भारत (व्यक्तिगत) + वर्चुअल विकल्प उपलब्ध",
+                attendees: "किसे भाग लेना चाहिए:",
+                attendeesValue: "अभियान प्रबंधकों, डिजिटल रणनीतिकारों, राजनीतिक समन्वयकों",
+                benefits: "लाभ",
+                benefit1: "उपस्थिति का प्रमाण पत्र",
+                benefit2: "एक्सक्लूसिव उपकरण पहुंच और टेम्पलेट",
+                benefit3: "उद्योग पेशेवरों के साथ नेटवर्किंग",
+                benefit4: "व्यापक कार्यशाला सामग्री",
+                investment: "निवेश",
+                earlyBird: "अर्ली बर्ड: ₹9,999",
+                regular: "नियमित: ₹12,999",
+                groupDiscounts: "समूह पंजीकरण के लिए छूट उपलब्ध",
+                registerToday: "आज ही रजिस्टर करें",
+                registerMsg: "सीमित सीटें उपलब्ध!",
+                email: "ईमेल: workshops@sarathivisions.com",
+                whatsapp: "व्हाट्सएप: +91 93594 35183",
+                printBrochure: "ब्रोशर प्रिंट करें"
+            },
+            mr: {
+                workshopTitle: "डिजिटल रणनीती कार्यशाळा",
+                subtitle: "आधुनिक प्रचार व्यवस्थापनात महारत मिळवा",
+                overview: "कार्यशाळा सारांश",
+                overviewDesc: "हा 4-तासीय गहन कार्यशाळा अत्याधुनिक डिजिटल प्रचार रणनीती, मतदार सहभागिता तंत्र आणि आधुनिक साधने व प्लेटफॉर्म वापरून रीयल-टाइम प्रचार व्यवस्थापनावर केंद्रित आहे।",
+                keyTopics: "मुख्य विषय",
+                topic1: "डिजिटल प्रचार अवसंरचना स्थापना",
+                topic2: "बहु-चॅनेल प्रचार कार्यवाही",
+                topic3: "उन्नत लक्ष्यीकरण आणि व्यक्तिगतकरण",
+                topic4: "कार्यक्षमता ट्रॅकिंग आणि अनुकूलन",
+                topic5: "डिजिटल प्रचारांमध्ये संकट व्यवस्थापन",
+                topic6: "हाতचालू साधन प्रदर्शन",
+                eventDetails: "कार्यक्रम तपशील",
+                date: "तारीख:",
+                dateValue: "25 मार्च 2026",
+                time: "वेळ:",
+                timeValue: "2:00 PM - 6:00 PM (IST)",
+                location: "स्थान:",
+                locationValue: "मुंबई, भारत (व्यक्तिगत) + आभासी पर्याय उपलब्ध",
+                attendees: "कोण भाग घेतला पाहिजे:",
+                attendeesValue: "प्रचार व्यवस्थापकों, डिजिटल रणनीतिकारांना, राजकीय समन्वयकांना",
+                benefits: "फायदे",
+                benefit1: "उपस्थितीचा प्रमाणपत्र",
+                benefit2: "एक्सक्लूसिव साधन प्रवेश आणि टेम्पलेट",
+                benefit3: "उद्योग व्यावसायिकांसह नेटवर्किंग",
+                benefit4: "व्यापक कार्यशाळा साधन",
+                investment: "गुंतवणूक",
+                earlyBird: "अर्ली बर्ड: ₹9,999",
+                regular: "नियमित: ₹12,999",
+                groupDiscounts: "समूह नोंदणीसाठी सूट उपलब्ध",
+                registerToday: "आज नोंदणी करा",
+                registerMsg: "सीमित सीटें उपलब्ध!",
+                email: "ईमेल: workshops@sarathivisions.com",
+                whatsapp: "व्हाट्सएप: +91 93594 35183",
+                printBrochure: "ब्रोशर प्रिंट करा"
+            },
+            bn: {
+                workshopTitle: "ডিজিটাল কৌশল কর্মশালা",
+                subtitle: "আধুনিক প্রচার পরিচালনায় দক্ষতা অর্জন করুন",
+                overview: "কর্মশালা সংক্ষিপ্তসার",
+                overviewDesc: "একটি নিবিড় 4-ঘন্টার কর্মশালা যা অত্যাধুনিক ডিজিটাল প্রচার কৌশল, ভোটার সংযোগ কৌশল এবং আধুনিক সরঞ্জাম ও প্ল্যাটফর্ম ব্যবহার করে রিয়েল-টাইম প্রচার পরিচালনার উপর দৃষ্টি নিবদ্ধ করে।",
+                keyTopics: "মূল বিষয়",
+                topic1: "ডিজিটাল প্রচার অবকাঠামো সেটআপ",
+                topic2: "মাল্টি-চ্যানেল প্রচার বাস্তবায়ন",
+                topic3: "উন্নত লক্ষ্যীকরণ এবং ব্যক্তিগতকরণ",
+                topic4: "কর্মক্ষমতা ট্র্যাকিং এবং অপ্টিমাইজেশন",
+                topic5: "ডিজিটাল প্রচারে সংকট ব্যবস্থাপনা",
+                topic6: "হ্যান্ডস-অন টুল ডেমোনস্ট্রেশন",
+                eventDetails: "ইভেন্ট বিবরণ",
+                date: "তারিখ:",
+                dateValue: "২৫ মার্চ ২०२६",
+                time: "সময়:",
+                timeValue: "2:00 PM - 6:00 PM (IST)",
+                location: "অবস্থান:",
+                locationValue: "মুম্বাই, ভারত (ব্যক্তিগত) + ভার্চুয়াল বিকল্প উপলব্ধ",
+                attendees: "কে অংশগ্রহণ করবেন:",
+                attendeesValue: "প্রচার ব্যবস্থাপক, ডিজিটাল কৌশল বিশেষজ্ঞ, রাজনৈতিক সমন্বয়কারী",
+                benefits: "সুবিধা",
+                benefit1: "উপস্থিতির সার্টিফিকেট",
+                benefit2: "একচেটিয়া সরঞ্জাম অ্যাক্সেস এবং টেমপ্লেট",
+                benefit3: "শিল্প পেশাদারদের সাথে নেটওয়ার্কিং",
+                benefit4: "ব্যাপক কর্মশালা উপকরণ",
+                investment: "বিনিয়োগ",
+                earlyBird: "আর্লি বার্ড: ₹9,999",
+                regular: "নিয়মিত: ₹12,999",
+                groupDiscounts: "গ্রুপ নিবন্ধনের জন্য ছাড় পাওয়া যায়",
+                registerToday: "আজই নিবন্ধন করুন",
+                registerMsg: "সীমিত সীটের আসন উপলব্ধ!",
+                email: "ইমেল: workshops@sarathivisions.com",
+                whatsapp: "হোয়াটসঅ্যাপ: +91 93594 35183",
+                printBrochure: "ব্রোশিওর প্রিন্ট করুন"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('brochureLang', lang);
+            updatePageContent();
+            document.documentElement.lang = lang;
+        }
+
+        function updatePageContent() {
+            const t = translations[currentLang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.textContent = t[key];
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('brochureLang') || 'en';
+            setLanguage(savedLang);
+        });
+    </script>
+</head>
+<body class="bg-slate-950 text-white">
+    <div class="fixed top-4 right-4 z-50">
+        <select onchange="setLanguage(this.value)" class="bg-slate-800 text-white px-4 py-2 rounded-lg border border-purple-500 cursor-pointer">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mr">मराठी</option>
+            <option value="bn">বাংলা</option>
+        </select>
+    </div>
+
+    <div class="container mx-auto px-8 py-12">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-black mb-4 text-purple-400" data-i18n="workshopTitle">Digital Strategy Workshop</h1>
+                <p class="text-xl text-slate-300" data-i18n="subtitle">Master Modern Campaign Management</p>
+            </div>
+
+            <div class="bg-slate-900 rounded-xl p-8 space-y-8">
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-purple-400" data-i18n="overview">Workshop Overview</h2>
+                    <p class="text-slate-300 leading-relaxed mb-4" data-i18n="overviewDesc">An intensive 4-hour workshop focusing on cutting-edge digital campaign strategies, voter engagement techniques, and real-time campaign management using modern tools and platforms.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-blue-400" data-i18n="keyTopics">Key Topics</h2>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-400 mt-1">✓</span>
+                            <span data-i18n="topic1">Digital campaign infrastructure setup</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-400 mt-1">✓</span>
+                            <span data-i18n="topic2">Multi-channel campaign execution</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-400 mt-1">✓</span>
+                            <span data-i18n="topic3">Advanced targeting and personalization</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-400 mt-1">✓</span>
+                            <span data-i18n="topic4">Performance tracking and optimization</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-400 mt-1">✓</span>
+                            <span data-i18n="topic5">Crisis management in digital campaigns</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-400 mt-1">✓</span>
+                            <span data-i18n="topic6">Hands-on tool demonstrations</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-pink-400" data-i18n="eventDetails">Event Details</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold text-slate-200" data-i18n="date">Date:</p>
+                            <p class="text-slate-400" data-i18n="dateValue">March 25, 2026</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-200" data-i18n="time">Time:</p>
+                            <p class="text-slate-400" data-i18n="timeValue">2:00 PM - 6:00 PM (IST)</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-200" data-i18n="location">Locations:</p>
+                            <p class="text-slate-400" data-i18n="locationValue">Mumbai, India (In-person) + Virtual Option Available</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-200" data-i18n="attendees">Who Should Attend:</p>
+                            <p class="text-slate-400" data-i18n="attendeesValue">Campaign managers, digital strategists, political coordinators</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-green-400" data-i18n="benefits">Benefits</h2>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>🎓 <span data-i18n="benefit1">Certificate of attendance</span></li>
+                        <li>💻 <span data-i18n="benefit2">Exclusive tool access and templates</span></li>
+                        <li>🤝 <span data-i18n="benefit3">Networking with industry professionals</span></li>
+                        <li>📚 <span data-i18n="benefit4">Comprehensive workshop materials</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-indigo-400" data-i18n="investment">Investment</h2>
+                    <p class="text-slate-300 mb-2" data-i18n="earlyBird">Early Bird: ₹9,999</p>
+                    <p class="text-slate-300 mb-4" data-i18n="regular">Regular: ₹12,999</p>
+                    <p class="text-slate-400 text-sm" data-i18n="groupDiscounts">Discounts available for group registrations</p>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-orange-400" data-i18n="registerToday">Register Today</h2>
+                    <p class="text-slate-300 mb-4" data-i18n="registerMsg">Limited seats available!</p>
+                    <p class="text-blue-400" data-i18n="email">Email: workshops@sarathivisions.com</p>
+                    <p class="text-green-400" data-i18n="whatsapp">WhatsApp: +91 93594 35183</p>
+                </section>
+            </div>
+
+            <div class="text-center mt-12">
+                <button onclick="window.print()" class="bg-purple-600 hover:bg-purple-700 px-8 py-3 rounded-lg font-semibold" data-i18n="printBrochure">Print Brochure</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
