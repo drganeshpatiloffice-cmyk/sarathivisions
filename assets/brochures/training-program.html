@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Training Program - Brochure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap');
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+        }
+    </style>
+    <script>
+        const translations = {
+            en: {
+                trainingProgram: "Advanced Training Program",
+                subtitle: "Electoral Analytics & Digital Campaign Strategy",
+                overview: "Program Overview",
+                overviewDesc: "This comprehensive 5-day training program is designed for political professionals, campaign managers, and researchers who want to master electoral analytics and digital campaign strategies.",
+                whatYouLearn: "What You'll Learn",
+                point1: "Advanced voter analytics and data profiling techniques",
+                point2: "Digital campaign management and optimization strategies",
+                point3: "Social media analytics and audience targeting",
+                point4: "Real-time campaign monitoring and adjustments",
+                point5: "Case studies from successful campaigns",
+                programDetails: "Program Details",
+                duration: "Duration:",
+                durationValue: "5 Days (March 15-20, 2026)",
+                schedule: "Schedule:",
+                scheduleValue: "10:00 AM - 5:00 PM (IST) with breaks",
+                location: "Location:",
+                locationValue: "New Delhi, India",
+                classSize: "Class Size:",
+                classSizeValue: "Limited to 30 participants",
+                investment: "Investment",
+                earlyBird: "Early Bird: ₹49,999 (Limited slots available)",
+                regular: "Regular: ₹59,999",
+                registerNow: "Register Now",
+                registerDesc: "Contact us to secure your spot:",
+                email: "Email: training@sarathivisions.com",
+                whatsapp: "WhatsApp: +91 93594 35183",
+                printBrochure: "Print Brochure"
+            },
+            hi: {
+                trainingProgram: "उन्नत प्रशिक्षण कार्यक्रम",
+                subtitle: "चुनावी विश्लेषण और डिजिटल अभियान रणनीति",
+                overview: "कार्यक्रम सारांश",
+                overviewDesc: "यह व्यापक 5-दिवसीय प्रशिक्षण कार्यक्रम राजनीतिक पेशेवरों, अभियान प्रबंधकों और शोधकर्ताओं के लिए डिज़ाइन किया गया है जो चुनावी विश्लेषण और डिजिटल अभियान रणनीतियों में महारत हासिल करना चाहते हैं।",
+                whatYouLearn: "आप क्या सीखेंगे",
+                point1: "उन्नत मतदाता विश्लेषण और डेटा प्रोफाइलिंग तकनीकें",
+                point2: "डिजिटल अभियान प्रबंधन और अनुकूलन रणनीतियां",
+                point3: "सोशल मीडिया विश्लेषण और दर्शकों का लक्ष्यीकरण",
+                point4: "रीयल-टाइम अभियान निगरानी और समायोजन",
+                point5: "सफल अभियानों से केस स्टडीज",
+                programDetails: "कार्यक्रम विवरण",
+                duration: "अवधि:",
+                durationValue: "5 दिन (15-20 मार्च 2026)",
+                schedule: "समय सारणी:",
+                scheduleValue: "10:00 AM - 5:00 PM (IST) ब्रेक के साथ",
+                location: "स्थान:",
+                locationValue: "नई दिल्ली, भारत",
+                classSize: "कक्षा का आकार:",
+                classSizeValue: "30 प्रतिभागियों तक सीमित",
+                investment: "निवेश",
+                earlyBird: "अर्ली बर्ड: ₹49,999 (सीमित स्लॉट उपलब्ध)",
+                regular: "नियमित: ₹59,999",
+                registerNow: "अभी रजिस्टर करें",
+                registerDesc: "अपनी जगह सुरक्षित करने के लिए हमसे संपर्क करें:",
+                email: "ईमेल: training@sarathivisions.com",
+                whatsapp: "व्हाट्सएप: +91 93594 35183",
+                printBrochure: "ब्रोशर प्रिंट करें"
+            },
+            mr: {
+                trainingProgram: "उन्नत प्रशिक्षण कार्यक्रम",
+                subtitle: "निवडणूक विश्लेषण आणि डिजिटल प्रचार रणनीती",
+                overview: "कार्यक्रम सारांश",
+                overviewDesc: "हा व्यापक 5-दिवसीय प्रशिक्षण कार्यक्रम राजकीय व्यावसायिकांसाठी डिजाइन केला आहे जे निवडणूक विश्लेषण आणि डिजिटल प्रचार रणनीती माझ्या करू इच्छिते.",
+                whatYouLearn: "तुम्ही काय शिकाल",
+                point1: "उन्नत मतदार विश्लेषण आणि डेटा प्रोफाइलिंग तंत्र",
+                point2: "डिजिटल प्रचार व्यवस्थापन आणि अनुकूलन रणनीती",
+                point3: "सोशल मीडिया विश्लेषण आणि दर्शक लक्ष्यीकरण",
+                point4: "रीयल-टाइम प्रचार निरीक्षण आणि समायोजन",
+                point5: "यशस्वी प्रचारांकडून केस स्टडीज",
+                programDetails: "कार्यक्रम तपशील",
+                duration: "कालावधी:",
+                durationValue: "5 दिन (15-20 मार्च 2026)",
+                schedule: "शेड्यूल:",
+                scheduleValue: "10:00 AM - 5:00 PM (IST) ब्रेकसह",
+                location: "स्थान:",
+                locationValue: "नवी दिल्ली, भारत",
+                classSize: "वर्ग आकार:",
+                classSizeValue: "30 प्रतिभागींपर्यंत मर्यादित",
+                investment: "गुंतवणूक",
+                earlyBird: "अर्ली बर्ड: ₹49,999 (मर्यादित स्लॉट उपलब्ध)",
+                regular: "नियमित: ₹59,999",
+                registerNow: "आता नोंदणी करा",
+                registerDesc: "आपल्या जागेची हमी देण्यासाठी आमच्याशी संपर्क साधा:",
+                email: "ईमेल: training@sarathivisions.com",
+                whatsapp: "व्हाट्सएप: +91 93594 35183",
+                printBrochure: "ब्रोशर प्रिंट करा"
+            },
+            bn: {
+                trainingProgram: "উন্নত প্রশিক্ষণ প্রোগ্রাম",
+                subtitle: "নির্বাচনী বিশ্লেষণ এবং ডিজিটাল প্রচার কৌশল",
+                overview: "প্রোগ্রাম সংক্ষিপ্তসার",
+                overviewDesc: "এই ব্যাপক 5-দিনের প্রশিক্ষণ প্রোগ্রামটি রাজনীতিক পেশাদার, প্রচার ব্যবস্থাপক এবং গবেষকদের জন্য ডিজাইন করা হয়েছে যারা নির্বাচনী বিশ্লেষণ এবং ডিজিটাল প্রচার কৌশলে দক্ষতা অর্জন করতে চান।",
+                whatYouLearn: "আপনি কী শিখবেন",
+                point1: "উন্নত ভোটার বিশ্লেষণ এবং ডেটা প্রোফাইলিং কৌশল",
+                point2: "ডিজিটাল প্রচার ব্যবস্থাপনা এবং অপ্টিমাইজেশন কৌশল",
+                point3: "সোশ্যাল মিডিয়া বিশ্লেষণ এবং দর্শক লক্ষ্যীকরণ",
+                point4: "রিয়েল-টাইম প্রচার পর্যবেক্ষণ এবং সামঞ্জস্য",
+                point5: "সফল প্রচারাভিযান থেকে কেস স্টাডিজ",
+                programDetails: "প্রোগ্রাম বিবরণ",
+                duration: "সময়কাল:",
+                durationValue: "5 দিন (১৫-২০ মার্চ ২০२६)",
+                schedule: "সময়সূচী:",
+                scheduleValue: "10:00 AM - 5:00 PM (IST) বিরতি সহ",
+                location: "অবস্থান:",
+                locationValue: "নতুন দিল্লি, ভারত",
+                classSize: "শ্রেণীর আকার:",
+                classSizeValue: "30 অংশগ্রহণকারীদের মধ্যে সীমাবদ্ধ",
+                investment: "বিনিয়োগ",
+                earlyBird: "আর্লি বার্ড: ₹49,999 (সীমিত স্লট উপলব্ধ)",
+                regular: "নিয়মিত: ₹59,999",
+                registerNow: "এখনই নিবন্ধন করুন",
+                registerDesc: "আপনার আসন সুরক্ষিত করতে আমাদের সাথে যোগাযোগ করুন:",
+                email: "ইমেল: training@sarathivisions.com",
+                whatsapp: "হোয়াটসঅ্যাপ: +91 93594 35183",
+                printBrochure: "ব্রোশিওর প্রিন্ট করুন"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('brochureLang', lang);
+            updatePageContent();
+            document.documentElement.lang = lang;
+        }
+
+        function updatePageContent() {
+            const t = translations[currentLang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.textContent = t[key];
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('brochureLang') || 'en';
+            setLanguage(savedLang);
+        });
+    </script>
+</head>
+<body class="bg-slate-950 text-white">
+    <div class="fixed top-4 right-4 z-50">
+        <select onchange="setLanguage(this.value)" class="bg-slate-800 text-white px-4 py-2 rounded-lg border border-blue-500 cursor-pointer">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mr">मराठी</option>
+            <option value="bn">বাংলা</option>
+        </select>
+    </div>
+
+    <div class="container mx-auto px-8 py-12">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-black mb-4 text-blue-400" data-i18n="trainingProgram">Advanced Training Program</h1>
+                <p class="text-xl text-slate-300" data-i18n="subtitle">Electoral Analytics & Digital Campaign Strategy</p>
+            </div>
+
+            <div class="bg-slate-900 rounded-xl p-8 space-y-8">
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-blue-400" data-i18n="overview">Program Overview</h2>
+                    <p class="text-slate-300 leading-relaxed mb-4" data-i18n="overviewDesc">This comprehensive 5-day training program is designed for political professionals, campaign managers, and researchers who want to master electoral analytics and digital campaign strategies.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-purple-400" data-i18n="whatYouLearn">What You'll Learn</h2>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-400 mt-1">✓</span>
+                            <span data-i18n="point1">Advanced voter analytics and data profiling techniques</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-400 mt-1">✓</span>
+                            <span data-i18n="point2">Digital campaign management and optimization strategies</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-400 mt-1">✓</span>
+                            <span data-i18n="point3">Social media analytics and audience targeting</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-400 mt-1">✓</span>
+                            <span data-i18n="point4">Real-time campaign monitoring and adjustments</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-400 mt-1">✓</span>
+                            <span data-i18n="point5">Case studies from successful campaigns</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-pink-400" data-i18n="programDetails">Program Details</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold text-slate-200" data-i18n="duration">Duration:</p>
+                            <p class="text-slate-400" data-i18n="durationValue">5 Days (March 15-20, 2026)</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-200" data-i18n="schedule">Schedule:</p>
+                            <p class="text-slate-400" data-i18n="scheduleValue">10:00 AM - 5:00 PM (IST) with breaks</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-200" data-i18n="location">Location:</p>
+                            <p class="text-slate-400" data-i18n="locationValue">New Delhi, India</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-200" data-i18n="classSize">Class Size:</p>
+                            <p class="text-slate-400" data-i18n="classSizeValue">Limited to 30 participants</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-green-400" data-i18n="investment">Investment</h2>
+                    <p class="text-slate-300 mb-2" data-i18n="earlyBird">Early Bird: ₹49,999 (Limited slots available)</p>
+                    <p class="text-slate-300" data-i18n="regular">Regular: ₹59,999</p>
+                </section>
+
+                <section>
+                    <h2 class="text-3xl font-bold mb-4 text-indigo-400" data-i18n="registerNow">Register Now</h2>
+                    <p class="text-slate-300 mb-4" data-i18n="registerDesc">Contact us to secure your spot:</p>
+                    <p class="text-blue-400" data-i18n="email">Email: training@sarathivisions.com</p>
+                    <p class="text-green-400" data-i18n="whatsapp">WhatsApp: +91 93594 35183</p>
+                </section>
+            </div>
+
+            <div class="text-center mt-12">
+                <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold" data-i18n="printBrochure">Print Brochure</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

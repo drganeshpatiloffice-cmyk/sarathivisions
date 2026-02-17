@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Ravi Patil",
+    "mobile": "9876543210",
+    "email": "ravi.patil@example.com",
+    "state": "Maharashtra",
+    "district": "Pune",
+    "taluka": "Pune City",
+    "village": "Aundh",
+    "role": "Field Coordinator"
+  },
+  {
+    "name": "Anita Deshmukh",
+    "mobile": "9123456780",
+    "email": "anita.d@example.com",
+    "state": "Maharashtra",
+    "district": "Pune",
+    "taluka": "Baramati",
+    "village": "Baramati",
+    "role": "Volunteer"
+  },
+  {
+    "name": "Sanjay Roy",
+    "mobile": "9412345678",
+    "email": "sanjay.roy@example.com",
+    "state": "West Bengal",
+    "district": "Kolkata",
+    "taluka": "Kolkata Sadar",
+    "village": "Bhowanipur",
+    "role": "Data Analyst"
+  },
+  {
+    "name": "Priya Sharma",
+    "mobile": "9012345670",
+    "email": "priya.sharma@example.com",
+    "state": "Delhi",
+    "district": "New Delhi",
+    "taluka": "Central Delhi",
+    "village": "Chandni Chowk",
+    "role": "Campaign Manager"
+  }
+]
