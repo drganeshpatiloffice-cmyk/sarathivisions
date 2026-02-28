@@ -88,7 +88,7 @@ font-weight:bold;
 कार्यशाळा नोंदणी
 </h3>
 
-<form class="max-w-md mx-auto space-y-4">
+<form id="leadForm" class="max-w-md mx-auto space-y-4">
 
 <input type="text" placeholder="पूर्ण नाव" class="w-full p-3 rounded text-black" required>
 
@@ -142,6 +142,30 @@ document.getElementById("minutes").innerHTML = minutes + " मिनिटे";
 
 },1000);
 </script>
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
 
+  const data = {
+    name: this[0].value,
+    village: this[1].value,
+    mobile: this[2].value,
+    type: this[3].value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbyMXiy6LT6_A5rXumIwUQsNc357WIPjRqG6g3r52iRIjzd4_NKjskWwGyxEQsfwBRFNuA/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(response => response.text())
+  .then(data => {
+    alert("नोंदणी यशस्वी झाली! आम्ही लवकरच संपर्क करू.");
+    document.getElementById("leadForm").reset();
+  })
+  .catch(error => {
+    alert("काहीतरी चूक झाली. पुन्हा प्रयत्न करा.");
+  });
+});
+</script>
 </body>
 </html>
