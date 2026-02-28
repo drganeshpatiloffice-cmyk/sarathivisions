@@ -1,427 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarathi Visions - Political Strategy & Research Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap');
-        
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            color: #d4af37;
-        }
-        
-        body {
-            background: url('assets/images/krishna-arjuna.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
-        .animate-slideInLeft { animation: slideInLeft 0.8s ease-out forwards; }
-        .animate-slideInRight { animation: slideInRight 0.8s ease-out forwards; }
-        .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-        .animate-float { animation: float 3s ease-in-out infinite; }
-        
-        .glass-effect {
-            background: rgba(10, 15, 35, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-        }
-        
-        .text-golden {
-            color: #d4af37;
-        }
-        
-        .text-golden-light {
-            color: #f4d03f;
-        }
-        
-        .premium-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-        }
-        
-        .shine-effect { position: relative; overflow: hidden; }
-        .shine-effect::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shine 3s infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: translate(-100%, -100%) rotate(45deg); }
-            100% { transform: translate(100%, 100%) rotate(45deg); }
-        }
-        
-        /* Premium Background Layers */
-        .hero-gradient {
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 50%, rgba(15, 23, 42, 0.95) 100%);
-        }
-        
-        .section-dark {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
-        }
-        
-        .section-premium {
-            background: linear-gradient(135deg, #0a0f23 0%, #1a2a4a 50%, #0f1828 100%);
-        }
-    </style>
-    <script>
-        const translations = {
-            en: {
-                title: "Sarathi Visions",
-                subtitle: "Political Strategy & Research Hub",
-                description: "Advanced electoral analytics, digital campaign management, and mobile solutions for modern political campaigns.",
-                exploreBtn: "Explore Services",
-                home: "Home",
-                services: "Services",
-                admin: "Admin",
-                capabilities: "Our Capabilities",
-                dataAnalytics: "Data Analytics",
-                dataDesc: "Advanced statistical analysis and voter profiling for targeted campaigns.",
-                digitalStrategy: "Digital Strategy",
-                strategyDesc: "Comprehensive digital campaign management and optimization.",
-                mobileSolutions: "Mobile Solutions",
-                mobileDesc: "Custom mobile platforms for voter engagement and campaign management.",
-                aboutUs: "About Us",
-                aboutCompany: "About Our Company",
-                companyDesc: "Sarathi Visions is a leading political strategy and research consultancy dedicated to empowering democratic campaigns with cutting-edge technology and data-driven insights. Founded in 2020, we have become trusted partners for political organizations across India.",
-                founder: "Our Founder",
-                founderDesc: "Dr. Ganesh Patil (PhD) is a visionary strategist who brings academic rigor to the high-stakes world of Indian politics. Holding a Doctorate from SHUATS, his approach is rooted in scientific optimization rather than conventional guesswork. As the founder of Sarathi Visions, he has pioneered a data-driven methodology that decodes voter behavior with surgical precision. Under his leadership, Sarathi Visions mobilizes a powerful network of over 1,000 digital workers, reaching up to 1 lakh local voters daily. His expertise spans from the complex political terrains of Maharashtra to the emerging dynamics of West Bengal, providing leaders with a 'Digital War Room' capable of real-time narrative control and image fortification.",
-                team: "Our Team",
-                teamDesc: "Our talented team consists of data scientists, software engineers, political strategists, and campaign managers working collaboratively to deliver exceptional results. We are committed to innovation and excellence.",
-                contactUs: "Contact Us",
-                getInTouch: "Get In Touch",
-                phone: "Phone",
-                email: "Email",
-                whatsapp: "WhatsApp",
-                followUs: "Follow Us on Social Media",
-                copyright: "© 2026 Sarathi Visions. All rights reserved."
-            },
-            hi: {
-                title: "सारथी विजन्स",
-                subtitle: "राजनीतिक रणनीति और अनुसंधान केंद्र",
-                description: "आधुनिक राजनीतिक अभियानों के लिए उन्नत चुनावी विश्लेषण, डिजिटल अभियान प्रबंधन और मोबाइल समाधान।",
-                exploreBtn: "सेवाओं की खोज करें",
-                home: "घर",
-                services: "सेवाएं",
-                admin: "प्रशासक",
-                capabilities: "हमारी क्षमताएँ",
-                dataAnalytics: "डेटा विश्लेषण",
-                dataDesc: "लक्षित अभियानों के लिए उन्नत सांख्यिकीय विश्लेषण और मतदाता प्रोफाइलिंग।",
-                digitalStrategy: "डिजिटल रणनीति",
-                strategyDesc: "व्यापक डिजिटल अभियान प्रबंधन और अनुकूलन।",
-                mobileSolutions: "मोबाइल समाधान",
-                mobileDesc: "मतदाता जुड़ाव और अभियान प्रबंधन के लिए कस्टम मोबाइल प्लेटफॉर्म।",
-                aboutUs: "हमारे बारे में",
-                aboutCompany: "हमारी कंपनी के बारे में",
-                companyDesc: "सारथी विजन्स एक अग्रणी राजनीतिक रणनीति और अनुसंधान परामर्श है जो अत्याधुनिक प्रौद्योगिकी और डेटा-संचालित अंतर्दृष्टि के साथ लोकतांत्रिक अभियानों को सशक्त करने के लिए समर्पित है। 2020 में स्थापित, हम पूरे भारत में राजनीतिक संगठनों के विश्वसनीय भागीदार बन गए हैं।",
-                founder: "हमारे संस्थापक",
-                founderDesc: "डॉ. गणेश पाटिल (पीएचडी) एक दूरदर्शी रणनीतिकार हैं जो भारतीय राजनीति की उच्च-दांव दुनिया में शैक्षणिक कठोरता लाते हैं। SHUATS से डॉक्टरेट की डिग्री धारण करते हुए, उनका दृष्टिकोन पारंपरिक अनुमान के बजाय वैज्ञानिक अनुकूलन में निहित है। सारथी विजन्स के संस्थापक के रूप में, उन्होंने एक डेटा-संचालित पद्धति विकसित की है जो मतदाता व्यवहार को शल्य चिकित्सा सटीकता के साथ समझती है। उनके नेतृत्व में, सारथी विजन्स 1,000 से अधिक डिजिटल कार्यकर्ताओं का एक शक्तिशाली नेटवर्क संचालित करता है, जो दैनिक 1 लाख स्थानीय मतदाताओं तक पहुंचता है। उनकी विशेषज्ञता महाराष्ट्र के जटिल राजनीतिक क्षेत्रों से लेकर पश्चिम बंगाल की उभरती गतिविधियों तक फैली हुई है।",
-                team: "हमारी टीम",
-                teamDesc: "हमारी प्रतिभाशाली टीम डेटा वैज्ञानिकों, सॉफ्टवेयर इंजीनियरों, राजनीतिक रणनीतिकारों और अभियान प्रबंधकों से मिलकर बनी है जो असाधारण परिणाम प्रदान करने के लिए सहयोग करते हैं। हम नवाचार और उत्कृष्टता के लिए प्रतिबद्ध हैं।",
-                contactUs: "हमसे संपर्क करें",
-                getInTouch: "हमसे जुड़ें",
-                phone: "फोन",
-                email: "ईमेल",
-                whatsapp: "व्हाट्सएप",
-                followUs: "सोशल मीडिया पर हमें फॉलो करें",
-                copyright: "© 2026 सारथी विजन्स। सर्वाधिकार सुरक्षित।"
-            },
-            mr: {
-                title: "सारथी व्हिजन्स",
-                subtitle: "राजकीय रणनीती व संशोधन केंद्र",
-                description: "आधुनिक राजकीय प्रचारांसाठी उन्नत निवडणूक विश्लेषण, डिजिटल प्रचार व्यवस्थापन आणि मोबाइल समाधान।",
-                exploreBtn: "सेवांचा अन्वेषण करा",
-                home: "घर",
-                services: "सेवा",
-                admin: "प्रशासन",
-                capabilities: "आमची क्षमता",
-                dataAnalytics: "डेटा विश्लेषण",
-                dataDesc: "लक्षित प्रचारांसाठी उन्नत सांख्यिकीय विश्लेषण आणि मतदार प्रोफाइलिंग।",
-                digitalStrategy: "डिजिटल रणनीती",
-                strategyDesc: "व्यापक डिजिटल प्रचार व्यवस्थापन आणि अनुकूलन।",
-                mobileSolutions: "मोबाइल समाधान",
-                mobileDesc: "मतदार सहभागिता आणि प्रचार व्यवस्थापनासाठी कस्टम मोबाइल प्लेटफॉर्म।",
-                aboutUs: "आमच्या विषयी",
-                aboutCompany: "आमच्या कंपनीविषयी",
-                companyDesc: "सारथी व्हिजन्स हे एक अग्रणी राजकीय रणनीती आणि संशोधन सल्लागार आहे जे अत्याधुनिक तंत्रज्ञान आणि डेटा-संचालित अंतर्दृष्टी द्वारे लोकशाही प्रचारांना सशक्त करण्यासाठी समर्पित आहे। 2020 मध्ये स्थापित, आम्ही संपूर्ण भारतात राजकीय संस्थांचे विश्वस्त भागीदार बनले आहोत।",
-                founder: "आमचे संस्थापक",
-                founderDesc: "डॉ. गणेश पाटील (पीएचडी) एक दूरदर्शी रणनीतिकार आहेत जे भारतीय राजकीयतेच्या उच्च-दांव जगतात शैक्षणिक कठोरता आणतात। SHUATS वरून डॉक्टरेट धारण करून, त्यांचा दृष्टिकोन पारंपरिक अनुमानाऐवजी वैज्ञानिक अनुकूलनामध्ये मूळ आहे। सारथी व्हिजन्सचे संस्थापक म्हणून, त्यांनी एक डेटा-संचालित पद्धती यशस्वी केली आहे जी मतदार वर्तन शस्त्रक्रिया अचूकतेने डिकोड करते। त्यांच्या नेतृत्वाखाली, सारथी व्हिजन्स 1,000 हून अधिक डिजिटल कर्मचारीचे शक्तिशाली नेटवर्क जमा करते, दैनिक 1 लाख स्थानिक मतदारांपर्यंत पोहोचते।",
-                team: "आमची संघ",
-                teamDesc: "आमच्या प्रतिभाशाली संघामध्ये डेटा वैज्ञानिक, सॉफ्टवेअर अभियंता, राजकीय रणनीतिकार आणि प्रचार व्यवस्थापक असून ते असाधारण परिणाम देण्यासाठी सहयोग करतात। आम्ही नवीनता आणि उत्कृष्टतेसाठी प्रतिबद्ध आहोत।",
-                contactUs: "आमच्याशी संपर्क करा",
-                getInTouch: "आमच्याशी जुळा",
-                phone: "फोन",
-                email: "ईमेल",
-                whatsapp: "व्हाट्सएप",
-                followUs: "सोशल मीडियावर आम्हांला फॉलो करा",
-                copyright: "© 2026 सारथी व्हिजन्स। सर्व हक्क सुरक्षित।"
-            },
-            bn: {
-                title: "সারথী ভিশনস",
-                subtitle: "রাজনৈতিক কৌশল এবং গবেষণা কেন্দ্র",
-                description: "আধুনিক রাজনৈতিক প্রচারণার জন্য উন্নত নির্বাচনী বিশ্লেষণ, ডিজিটাল প্রচার ব্যবস্থাপনা এবং মোবাইল সমাধান।",
-                exploreBtn: "সেবা অন্বেষণ করুন",
-                home: "বাড়ি",
-                services: "সেবা",
-                admin: "অ্যাডমিন",
-                capabilities: "আমাদের ক্ষমতা",
-                dataAnalytics: "ডেটা বিশ্লেষণ",
-                dataDesc: "লক্ষ্যবস্তু প্রচারণার জন্য উন্নত পরিসংখ্যান বিশ্লেষণ এবং ভোটার প্রোফাইলিং।",
-                digitalStrategy: "ডিজিটাল কৌশল",
-                strategyDesc: "ব্যাপক ডিজিটাল প্রচার ব্যবস্থাপনা এবং অপ্টিমাইজেশন।",
-                mobileSolutions: "মোবাইল সমাধান",
-                mobileDesc: "ভোটার সংযোগ এবং প্রচার পরিচালনার জন্য কাস্টম মোবাইল প্ল্যাটফর্ম।",
-                aboutUs: "আমাদের সম্পর্কে",
-                aboutCompany: "আমাদের কোম্পানি সম্পর্কে",
-                companyDesc: "সারথী ভিশনস একটি নেতৃস্থানীয় রাজনৈতিক কৌশল এবং গবেষণা পরামর্শ যা অত্যাধুনিক প্রযুক্তি এবং ডেটা-চালিত অন্তর্দৃষ্টি দিয়ে গণতান্ত্রিক প্রচারাভিযানকে ক্ষমতায়ন করতে প্রতিশ্রুতিবদ্ধ। 2020 সালে প্রতিষ্ঠিত, আমরা সারা ভারতে রাজনৈতিক সংস্থাগুলির বিশ্বস্ত অংশীদার হয়ে উঠেছি।",
-                founder: "আমাদের প্রতিষ্ঠাতা",
-                founderDesc: "ড. গণেশ পাটিল (পিএইচডি) একজন দূরদর্শী কৌশলবিদ যিনি ভারতীয় রাজনীতির উচ্চ-ঝুঁকি জগতে শিক্ষাগত কঠোরতা নিয়ে আসেন। SHUATS থেকে ডক্টরেট ধারণ করে, তার পদ্ধতি প্রচলিত অনুমান নয় বরং বৈজ্ঞানিক অপ্টিমাইজেশনে নিহিত। সারথী ভিশনসের প্রতিষ্ঠাতা হিসাবে, তিনি একটি ডেটা-চালিত পদ্ধতির অগ্রদূত যা ভোটার আচরণকে শল্য নির্ভুলতার সাথে ডিকোড করে। তার নেতৃত্বে, সারথী ভিশনস 1,000 এরও বেশি ডিজিটাল কর্মীর একটি শক্তিশালী নেটওয়ার্ক সংগঠিত করে, প্রতিদিন 1 লাখ স্থানীয় ভোটারদের কাছে পৌঁছায়। তার দক্ষতা মহারাষ্ট্রের জটিল রাজনৈতিক ভূখণ্ড থেকে পশ্চিমবঙ্গের উদীয়মান গতিশীলতা পর্যন্ত বিস্তৃত।",
-                team: "আমাদের দল",
-                teamDesc: "আমাদের প্রতিভাবান দল ডেটা বিজ্ঞানী, সফটওয়্যার ইঞ্জিনিয়ার, রাজনৈতিক কৌশলবিদ এবং প্রচার ব্যবস্থাপক নিয়ে গঠিত যারা ব্যতিক্রমী ফলাফল প্রদানের জন্য সহযোগিতা করে। আমরা উদ্ভাবন এবং শ্রেষ্ঠত্বের প্রতি প্রতিশ্রুতিবদ্ধ।",
-                contactUs: "আমাদের সাথে যোগাযোগ করুন",
-                getInTouch: "আমাদের সাথে যোগাযোগ করুন",
-                phone: "ফোন",
-                email: "ইমেল",
-                whatsapp: "হোয়াটসঅ্যাপ",
-                followUs: "সোশ্যাল মিডিয়ায় আমাদের অনুসরণ করুন",
-                copyright: "© 2026 সারথী ভিশনস। সর্বাধিকার সংরক্ষিত।"
-            }
-        };
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सारथी व्हिजन्स | डिजिटल निवडणूक रणनीती मंच</title>
 
-        let currentLang = 'en';
+<script src="https://cdn.tailwindcss.com"></script>
 
-        function setLanguage(lang) {
-            currentLang = lang;
-            localStorage.setItem('language', lang);
-            updatePageContent();
-            document.documentElement.lang = lang;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
-        function updatePageContent() {
-            const t = translations[currentLang];
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (t[key]) el.textContent = t[key];
-            });
-        }
+<style>
+body{
+font-family:'Poppins',sans-serif;
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('language') || 'en';
-            document.getElementById('langSelect').value = savedLang;
-            setLanguage(savedLang);
-        });
-    </script>
+/* HERO */
+.hero-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(127,29,29,0.85));
+z-index:-1;
+}
+
+/* Glass */
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+/* Slider */
+.slide{display:none;}
+.slide.active{
+display:block;
+animation:fade 1s ease-in-out;
+}
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* WhatsApp */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:16px;
+border-radius:50%;
+font-size:22px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+z-index:100;
+}
+</style>
 </head>
-<body class="bg-slate-950 text-white overflow-x-hidden relative">
-    <!-- Premium Background Overlay -->
-    <div class="fixed inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 opacity-40 -z-10"></div>
-    <div class="fixed inset-0 -z-10">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 2s"></div>
-        <div class="absolute top-1/2 right-0 w-96 h-96 bg-cyan-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 4s"></div>
-    </div>
-    <nav class="sticky top-0 z-50 p-6 glass-effect flex justify-between items-center shadow-2xl border-b border-blue-500/20 backdrop-blur-xl">
-        <h1 class="font-bold text-2xl bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent animate-slideInLeft">SARATHI VISIONS</h1>
-        <div class="flex items-center space-x-6">
-            <select id="langSelect" onchange="setLanguage(this.value)" class="glass-effect text-white px-4 py-2 rounded-lg border border-blue-500/40 cursor-pointer hover:border-blue-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="en">English</option>
-                <option value="hi">हिंदी</option>
-                <option value="mr">मराठी</option>
-                <option value="bn">বাংলা</option>
-            </select>
-            <a href="index.html" class="hover:text-blue-400 transition-all duration-300 font-semibold" data-i18n="home">Home</a>
-            <a href="services.html" class="hover:text-blue-400 transition-all duration-300 font-semibold" data-i18n="services">Services</a>
-            <a href="admin.html" class="hover:text-blue-400 transition-all duration-300 font-semibold" data-i18n="admin">Admin</a>
-        </div>
-    </nav>
 
-    <section class="relative text-center py-40 px-6 overflow-hidden bg-slate-950/40 backdrop-blur-sm">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-            <div class="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 2s"></div>
-        </div>
-        <div class="relative z-10">
-            <h1 class="text-7xl font-black mb-6 animate-fadeInUp bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent" data-i18n="title">Sarathi Visions</h1>
-            <p class="text-slate-300 mt-6 text-2xl font-light animate-fadeInUp" style="animation-delay: 0.2s" data-i18n="subtitle">Political Strategy & Research Hub</p>
-            <p class="text-slate-400 mt-4 max-w-2xl mx-auto text-lg animate-fadeInUp" style="animation-delay: 0.4s" data-i18n="description">Advanced electoral analytics, digital campaign management, and mobile solutions for modern political campaigns.</p>
-            <a href="services.html" class="inline-block mt-8 premium-gradient hover:shadow-2xl px-10 py-4 rounded-full font-bold text-white transition-all duration-300 transform hover:scale-105 animate-pulse-glow" style="animation-delay: 0.6s" data-i18n="exploreBtn">Explore Services</a>
-        </div>
-    </section>
+<body>
 
-    <section class="py-20 px-6 bg-slate-950/30 relative backdrop-blur-sm">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-black mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-fadeInUp" data-i18n="capabilities">Our Capabilities</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="group glass-effect p-8 rounded-2xl border-l-4 border-blue-500 hover:border-blue-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-slideInLeft" style="animation-delay: 0.1s">
-                    <div class="text-4xl mb-4 transform group-hover:scale-125 transition-transform duration-300">📊</div>
-                    <h3 class="text-2xl font-bold mb-3 text-blue-300 group-hover:text-blue-200" data-i18n="dataAnalytics">Data Analytics</h3>
-                    <p class="text-slate-300" data-i18n="dataDesc">Advanced statistical analysis and voter profiling for targeted campaigns.</p>
-                </div>
-                <div class="group glass-effect p-8 rounded-2xl border-l-4 border-purple-500 hover:border-purple-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-fadeInUp" style="animation-delay: 0.2s">
-                    <div class="text-4xl mb-4 transform group-hover:scale-125 transition-transform duration-300">🎯</div>
-                    <h3 class="text-2xl font-bold mb-3 text-purple-300 group-hover:text-purple-200" data-i18n="digitalStrategy">Digital Strategy</h3>
-                    <p class="text-slate-300" data-i18n="strategyDesc">Comprehensive digital campaign management and optimization.</p>
-                </div>
-                <div class="group glass-effect p-8 rounded-2xl border-l-4 border-pink-500 hover:border-pink-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-slideInRight" style="animation-delay: 0.3s">
-                    <div class="text-4xl mb-4 transform group-hover:scale-125 transition-transform duration-300">📱</div>
-                    <h3 class="text-2xl font-bold mb-3 text-pink-300 group-hover:text-pink-200" data-i18n="mobileSolutions">Mobile Solutions</h3>
-                    <p class="text-slate-300" data-i18n="mobileDesc">Custom mobile platforms for voter engagement and campaign management.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO SECTION -->
+<section class="relative h-screen flex items-center justify-center text-center px-6">
 
-    <section class="py-20 px-6 bg-slate-950/30 backdrop-blur-sm">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-black mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-fadeInUp" data-i18n="aboutUs">About Us</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="glass-effect p-8 rounded-2xl border-t-4 border-blue-500 hover:border-blue-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-slideInLeft" style="animation-delay: 0.1s">
-                    <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent" data-i18n="aboutCompany">About Our Company</h3>
-                    <p class="text-slate-300 leading-relaxed" data-i18n="companyDesc">Sarathi Visions is a leading political strategy and research consultancy dedicated to empowering democratic campaigns with cutting-edge technology and data-driven insights. Founded in 2020, we have become trusted partners for political organizations across India.</p>
-                </div>
-                
-                <div class="glass-effect p-8 rounded-2xl border-t-4 border-purple-500 hover:border-purple-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-fadeInUp" style="animation-delay: 0.2s">
-                    <div class="mb-6 flex justify-center">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-75 animate-pulse-glow"></div>
-                            <img src="assets/images/ganesh.jpg" alt="Dr. Ganesh Patil" class="relative w-40 h-40 rounded-full border-4 border-purple-500 object-cover shine-effect">
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent" data-i18n="founder">Our Founder</h3>
-                    <p class="text-slate-300 leading-relaxed text-sm" data-i18n="founderDesc">Dr. Ganesh Patil (PhD) is a visionary strategist who brings academic rigor to the high-stakes world of Indian politics. Holding a Doctorate from SHUATS, his approach is rooted in scientific optimization rather than conventional guesswork. As the founder of Sarathi Visions, he has pioneered a data-driven methodology that decodes voter behavior with surgical precision. Under his leadership, Sarathi Visions mobilizes a powerful network of over 1,000 digital workers, reaching up to 1 lakh local voters daily.</p>
-                </div>
-                
-                <div class="glass-effect p-8 rounded-2xl border-t-4 border-pink-500 hover:border-pink-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-slideInRight" style="animation-delay: 0.3s">
-                    <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-pink-300 bg-clip-text text-transparent" data-i18n="team">Our Team</h3>
-                    <p class="text-slate-300 leading-relaxed" data-i18n="teamDesc">Our talented team consists of data scientists, software engineers, political strategists, and campaign managers working collaboratively to deliver exceptional results. We are committed to innovation and excellence.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<video autoplay muted loop playsinline class="hero-video">
+<source src="assets/video/political.mp4" type="video/mp4">
+</video>
 
-    <section class="py-20 px-6 bg-slate-950/30 backdrop-blur-sm relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        </div>
-        <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-5xl font-black mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-fadeInUp" data-i18n="contactUs">Contact Us</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12 mb-12">
-                <div class="animate-slideInLeft" style="animation-delay: 0.1s">
-                    <h3 class="text-2xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent" data-i18n="getInTouch">Get In Touch</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="glass-effect p-6 rounded-xl border border-blue-500/40 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 group">
-                            <div class="flex items-start space-x-4">
-                                <div class="text-blue-400 text-3xl group-hover:scale-125 transition-transform duration-300 mt-1">📞</div>
-                                <div>
-                                    <p class="font-bold text-lg mb-2 text-blue-300" data-i18n="phone">Phone</p>
-                                    <p class="text-slate-300 hover:text-blue-400"><a href="tel:9359435183" class="hover:text-blue-400 transition">9359435183</a></p>
-                                    <p class="text-slate-300 hover:text-blue-400"><a href="tel:7057676266" class="hover:text-blue-400 transition">7057676266</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="glass-effect p-6 rounded-xl border border-purple-500/40 hover:border-purple-500 transition-all duration-300 transform hover:scale-105 group">
-                            <div class="flex items-start space-x-4">
-                                <div class="text-purple-400 text-3xl group-hover:scale-125 transition-transform duration-300 mt-1">✉️</div>
-                                <div>
-                                    <p class="font-bold text-lg mb-2 text-purple-300" data-i18n="email">Email</p>
-                                    <p class="text-slate-300"><a href="mailto:xyz@gmail.com" class="hover:text-purple-400 transition">xyz@gmail.com</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="animate-slideInRight" style="animation-delay: 0.2s">
-                    <h3 class="text-2xl font-bold mb-8 bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent" data-i18n="whatsapp">WhatsApp</h3>
-                    <a href="https://wa.me/919359435183?text=Hello%20Sarathi%20Visions" target="_blank" class="group inline-flex items-center space-x-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-8 py-4 rounded-full font-bold text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-2xl">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.732 5.41 2.124 7.738L2.883 22l8.268-2.735a9.828 9.828 0 004.614 1.175h.005c5.396 0 9.747-4.363 9.747-9.798 0-2.619-.758-5.335-2.194-7.622A9.822 9.822 0 0012.05 2.979"/>
-                        </svg>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="border-t border-slate-700/50 pt-12 animate-fadeInUp" style="animation-delay: 0.3s">
-                <h3 class="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-pink-400 to-pink-300 bg-clip-text text-transparent" data-i18n="followUs">Follow Us on Social Media</h3>
-                <div class="flex justify-center space-x-8">
-                    <a href="https://facebook.com/sarathivisions" target="_blank" class="glass-effect p-4 rounded-full text-blue-400 hover:text-blue-200 transition-all duration-300 transform hover:scale-125 hover:shadow-lg border border-blue-500/40 hover:border-blue-500" title="Facebook">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                    </a>
-                    <a href="https://twitter.com/sarathivisions" target="_blank" class="glass-effect p-4 rounded-full text-sky-400 hover:text-sky-200 transition-all duration-300 transform hover:scale-125 hover:shadow-lg border border-sky-500/40 hover:border-sky-500" title="Twitter">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M23.953 4.57a10 10 0 002.856-9.86 10 10 0 01-2.856 2.856c-1.82-1.674-4.49-2.708-7.313-2.708-5.369 0-9.713 4.344-9.713 9.713 0 .464.015.923.052 1.377A27.68 27.68 0 011.047 2.678c2.482 3.746 6.04 6.65 10.359 7.476-1.002 2.953-3.915 5.097-7.24 5.097-1.466 0-2.834-.356-4.027-1.026 2.65 1.705 5.84 2.691 9.274 2.691 11.121 0 17.298-9.187 17.298-17.298v-.788c1.19-.875 2.222-1.969 3.05-3.222z"/>
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com/company/sarathivisions" target="_blank" class="glass-effect p-4 rounded-full text-blue-600 hover:text-blue-400 transition-all duration-300 transform hover:scale-125 hover:shadow-lg border border-blue-600/40 hover:border-blue-600" title="LinkedIn">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com/sarathivisions" target="_blank" class="glass-effect p-4 rounded-full text-pink-500 hover:text-pink-300 transition-all duration-300 transform hover:scale-125 hover:shadow-lg border border-pink-500/40 hover:border-pink-500" title="Instagram">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m5.521 17.921h-11.04V7.079h11.04v10.842z"/>
-                            <path d="M12 4.088c-2.21 0-4.008 1.798-4.008 4.009 0 2.21 1.798 4.009 4.008 4.009s4.009-1.799 4.009-4.009c0-2.211-1.799-4.009-4.009-4.009m0 6.618c-1.441 0-2.609-1.168-2.609-2.609 0-1.441 1.168-2.609 2.609-2.609s2.609 1.168 2.609 2.609c0 1.441-1.168 2.609-2.609 2.609"/>
-                            <circle cx="17.891" cy="5.524" r="1.404"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <footer class="bg-black/80 backdrop-blur-lg text-center py-8 text-slate-400 border-t border-blue-500/20">
-        <p data-i18n="copyright">© 2026 Sarathi Visions. All rights reserved.</p>
-    </footer>
+<div class="hero-overlay"></div>
+
+<div>
+<h1 class="text-4xl md:text-7xl font-black mb-6">
+ग्रामपंचायत ते जिल्हा परिषद  
+डिजिटल निवडणूक जिंकण्याची संपूर्ण रणनीती
+</h1>
+
+<p class="text-xl md:text-2xl mb-8 text-yellow-400">
+100 कार्यकर्ते | 365 पोस्टर | मतदार विश्लेषण | पूर्ण War Room प्रणाली
+</p>
+
+<a href="#workshop"
+class="bg-orange-600 hover:bg-orange-700 px-10 py-4 rounded-full font-bold text-lg mr-4 transition transform hover:scale-105">
+कार्यशाळा नोंदणी
+</a>
+
+<a href="#system"
+class="border border-white px-10 py-4 rounded-full font-bold text-lg transition transform hover:scale-105">
+प्रणाली पाहा
+</a>
+</div>
+
+</section>
+
+<!-- TRUST COUNTER -->
+<section class="py-20 text-center bg-black">
+<div class="grid md:grid-cols-4 gap-10 max-w-6xl mx-auto">
+
+<div>
+<h2 class="text-5xl font-bold text-yellow-400">100+</h2>
+<p>डिजिटल मोहिमा</p>
+</div>
+
+<div>
+<h2 class="text-5xl font-bold text-yellow-400">50,000+</h2>
+<p>सक्रिय कार्यकर्ते</p>
+</div>
+
+<div>
+<h2 class="text-5xl font-bold text-yellow-400">1 लाख+</h2>
+<p>दैनिक डिजिटल पोहोच</p>
+</div>
+
+<div>
+<h2 class="text-5xl font-bold text-yellow-400">365</h2>
+<p>दिवस प्रचार प्रणाली</p>
+</div>
+
+</div>
+</section>
+
+<!-- SYSTEM SLIDER -->
+<section id="system" class="py-20 text-center bg-slate-900">
+
+<h2 class="text-4xl font-bold mb-10 text-yellow-400">
+आमची डिजिटल प्रणाली
+</h2>
+
+<div class="max-w-4xl mx-auto relative">
+
+<div class="slide active">
+<img src="assets/images/app1.jpg" class="rounded-xl shadow-2xl w-full">
+</div>
+
+<div class="slide">
+<img src="assets/images/app2.jpg" class="rounded-xl shadow-2xl w-full">
+</div>
+
+<div class="slide">
+<img src="assets/images/app3.jpg" class="rounded-xl shadow-2xl w-full">
+</div>
+
+<button onclick="prevSlide()" class="absolute left-0 top-1/2 text-3xl px-4">❮</button>
+<button onclick="nextSlide()" class="absolute right-0 top-1/2 text-3xl px-4">❯</button>
+
+</div>
+</section>
+
+<!-- WORKSHOP -->
+<section id="workshop" class="py-24 text-center bg-gradient-to-br from-black to-red-900">
+
+<h2 class="text-4xl font-bold mb-6">
+ग्रामपंचायत निवडणूक डिजिटल कार्यशाळा 2026
+</h2>
+
+<div id="countdown" class="text-3xl text-yellow-400 font-bold mb-8"></div>
+
+<a href="#" class="bg-orange-600 hover:bg-orange-700 px-10 py-4 rounded-full font-bold text-lg transition transform hover:scale-105">
+आत्ताच नोंदणी करा
+</a>
+
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-24 text-center bg-black">
+
+<h2 class="text-4xl font-bold mb-8">
+तुमची निवडणूक डिजिटल पद्धतीने जिंकण्यासाठी तयार आहात?
+</h2>
+
+<a href="#" class="bg-green-600 hover:bg-green-700 px-10 py-4 rounded-full font-bold text-lg transition transform hover:scale-105">
+डिजिटल रणनीती सुरू करा
+</a>
+
+</section>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/919359435183" target="_blank" class="whatsapp">
+💬
+</a>
+
+<footer class="bg-black text-center py-6">
+© 2026 सारथी व्हिजन्स
+</footer>
+
+<script>
+
+/* Slider */
+let slideIndex=0;
+const slides=document.querySelectorAll(".slide");
+
+function showSlide(n){
+slides.forEach(slide=>slide.classList.remove("active"));
+slides[n].classList.add("active");
+}
+
+function nextSlide(){
+slideIndex=(slideIndex+1)%slides.length;
+showSlide(slideIndex);
+}
+
+function prevSlide(){
+slideIndex=(slideIndex-1+slides.length)%slides.length;
+showSlide(slideIndex);
+}
+
+setInterval(nextSlide,5000);
+
+/* Countdown */
+var countDownDate = new Date("Mar 30, 2026 18:00:00").getTime();
+var x = setInterval(function() {
+var now = new Date().getTime();
+var distance = countDownDate - now;
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+document.getElementById("countdown").innerHTML =
+days + " दिवस " + hours + " तास शिल्लक";
+if (distance < 0) {
+clearInterval(x);
+document.getElementById("countdown").innerHTML = "कार्यशाळा सुरू झाली आहे";
+}
+}, 1000);
+
+</script>
+
+</body>
+</html>
