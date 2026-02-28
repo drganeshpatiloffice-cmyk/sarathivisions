@@ -3,69 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>सारथी व्हिजन्स | डिजिटल निवडणूक रणनीती मंच</title>
+<title>सारथी व्हिजन्स | डिजिटल निवडणूक रणनीती</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 body{
 font-family:'Poppins',sans-serif;
-background:#0f172a;
+background:#000;
 color:white;
 overflow-x:hidden;
 }
 
 /* HERO */
-.hero-video{
+.hero{
+position:relative;
+height:100vh;
+background:url('assets/images/rally.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero::after{
+content:"";
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
-object-fit:cover;
-z-index:-2;
+background:linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(120,40,0,0.8));
 }
 
-.hero-overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(127,29,29,0.85));
-z-index:-1;
+.hero-content{
+position:relative;
+z-index:2;
 }
 
-/* Glass */
-.glass{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,0.1);
+.gold{
+color:#f5c96a;
 }
 
-/* Slider */
+.counter-strip{
+background:linear-gradient(to right,#000,#1a1a1a,#000);
+border-top:2px solid #f5c96a;
+border-bottom:2px solid #f5c96a;
+}
+
+.slider-bg{
+background:url('assets/images/rally.jpg') center/cover no-repeat;
+}
+
+.overlay-dark{
+background:rgba(0,0,0,0.8);
+}
+
 .slide{display:none;}
-.slide.active{
-display:block;
-animation:fade 1s ease-in-out;
-}
-@keyframes fade{
-from{opacity:0;}
-to{opacity:1;}
-}
+.slide.active{display:block;}
 
-/* WhatsApp */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-padding:16px;
+padding:15px;
 border-radius:50%;
 font-size:22px;
-box-shadow:0 0 20px rgba(0,0,0,0.4);
+box-shadow:0 0 15px rgba(0,0,0,0.5);
 z-index:100;
 }
 </style>
@@ -73,59 +80,54 @@ z-index:100;
 
 <body>
 
-<!-- HERO SECTION -->
-<section class="relative h-screen flex items-center justify-center text-center px-6">
-
-<video autoplay muted loop playsinline class="hero-video">
-<source src="assets/video/political.mp4" type="video/mp4">
-</video>
-
-<div class="hero-overlay"></div>
-
-<div>
-<h1 class="text-4xl md:text-7xl font-black mb-6">
-ग्रामपंचायत ते जिल्हा परिषद  
-डिजिटल निवडणूक जिंकण्याची संपूर्ण रणनीती
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1 class="text-4xl md:text-6xl font-black mb-6">
+ग्रामपंचायत ते जिल्हा परिषद
 </h1>
+<h2 class="text-3xl md:text-5xl font-black gold mb-6">
+डिजिटल निवडणूक जिंकण्याची संपूर्ण रणनीती
+</h2>
 
-<p class="text-xl md:text-2xl mb-8 text-yellow-400">
+<p class="text-xl mb-8 gold">
 100 कार्यकर्ते | 365 पोस्टर | मतदार विश्लेषण | पूर्ण War Room प्रणाली
 </p>
 
 <a href="#workshop"
-class="bg-orange-600 hover:bg-orange-700 px-10 py-4 rounded-full font-bold text-lg mr-4 transition transform hover:scale-105">
+class="bg-orange-600 hover:bg-orange-700 px-10 py-4 rounded-lg font-bold text-lg mr-4">
 कार्यशाळा नोंदणी
 </a>
 
 <a href="#system"
-class="border border-white px-10 py-4 rounded-full font-bold text-lg transition transform hover:scale-105">
+class="border border-white px-10 py-4 rounded-lg font-bold text-lg">
 प्रणाली पाहा
 </a>
-</div>
 
+</div>
 </section>
 
-<!-- TRUST COUNTER -->
-<section class="py-20 text-center bg-black">
-<div class="grid md:grid-cols-4 gap-10 max-w-6xl mx-auto">
+<!-- COUNTERS -->
+<section class="counter-strip py-10 text-center">
+<div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
 <div>
-<h2 class="text-5xl font-bold text-yellow-400">100+</h2>
+<h2 class="text-5xl font-bold gold">100+</h2>
 <p>डिजिटल मोहिमा</p>
 </div>
 
 <div>
-<h2 class="text-5xl font-bold text-yellow-400">50,000+</h2>
+<h2 class="text-5xl font-bold gold">50,000+</h2>
 <p>सक्रिय कार्यकर्ते</p>
 </div>
 
 <div>
-<h2 class="text-5xl font-bold text-yellow-400">1 लाख+</h2>
+<h2 class="text-5xl font-bold gold">1 लाख+</h2>
 <p>दैनिक डिजिटल पोहोच</p>
 </div>
 
 <div>
-<h2 class="text-5xl font-bold text-yellow-400">365</h2>
+<h2 class="text-5xl font-bold gold">365</h2>
 <p>दिवस प्रचार प्रणाली</p>
 </div>
 
@@ -133,9 +135,11 @@ class="border border-white px-10 py-4 rounded-full font-bold text-lg transition 
 </section>
 
 <!-- SYSTEM SLIDER -->
-<section id="system" class="py-20 text-center bg-slate-900">
+<section id="system" class="slider-bg py-20 relative">
+<div class="overlay-dark absolute inset-0"></div>
 
-<h2 class="text-4xl font-bold mb-10 text-yellow-400">
+<div class="relative z-10 text-center">
+<h2 class="text-4xl font-bold gold mb-10">
 आमची डिजिटल प्रणाली
 </h2>
 
@@ -157,34 +161,24 @@ class="border border-white px-10 py-4 rounded-full font-bold text-lg transition 
 <button onclick="nextSlide()" class="absolute right-0 top-1/2 text-3xl px-4">❯</button>
 
 </div>
+</div>
 </section>
 
 <!-- WORKSHOP -->
-<section id="workshop" class="py-24 text-center bg-gradient-to-br from-black to-red-900">
+<section id="workshop" class="py-20 text-center" style="background:url('assets/images/rally.jpg') center/cover no-repeat;">
+<div class="overlay-dark absolute inset-0"></div>
 
+<div class="relative z-10">
 <h2 class="text-4xl font-bold mb-6">
 ग्रामपंचायत निवडणूक डिजिटल कार्यशाळा 2026
 </h2>
 
-<div id="countdown" class="text-3xl text-yellow-400 font-bold mb-8"></div>
+<div id="countdown" class="text-3xl gold font-bold mb-8"></div>
 
-<a href="#" class="bg-orange-600 hover:bg-orange-700 px-10 py-4 rounded-full font-bold text-lg transition transform hover:scale-105">
+<a href="#" class="bg-orange-600 hover:bg-orange-700 px-10 py-4 rounded-lg font-bold text-lg">
 आत्ताच नोंदणी करा
 </a>
-
-</section>
-
-<!-- FINAL CTA -->
-<section class="py-24 text-center bg-black">
-
-<h2 class="text-4xl font-bold mb-8">
-तुमची निवडणूक डिजिटल पद्धतीने जिंकण्यासाठी तयार आहात?
-</h2>
-
-<a href="#" class="bg-green-600 hover:bg-green-700 px-10 py-4 rounded-full font-bold text-lg transition transform hover:scale-105">
-डिजिटल रणनीती सुरू करा
-</a>
-
+</div>
 </section>
 
 <!-- WhatsApp -->
@@ -197,8 +191,6 @@ class="border border-white px-10 py-4 rounded-full font-bold text-lg transition 
 </footer>
 
 <script>
-
-/* Slider */
 let slideIndex=0;
 const slides=document.querySelectorAll(".slide");
 
@@ -225,15 +217,9 @@ var x = setInterval(function() {
 var now = new Date().getTime();
 var distance = countDownDate - now;
 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 document.getElementById("countdown").innerHTML =
-days + " दिवस " + hours + " तास शिल्लक";
-if (distance < 0) {
-clearInterval(x);
-document.getElementById("countdown").innerHTML = "कार्यशाळा सुरू झाली आहे";
-}
+days + " दिवस शिल्लक";
 }, 1000);
-
 </script>
 
 </body>
