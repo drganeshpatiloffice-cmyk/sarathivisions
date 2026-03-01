@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शुल्क भरणा | सारथी - विजयाचे आधुनिक महातंत्र</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { 
+            font-family: 'Mukta', sans-serif; 
+            background-color: #020617; 
+            color: white; 
+            overflow-x: hidden; 
+        }
+
+        .gold-text {
+            background: linear-gradient(to right, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(250, 204, 21, 0.2);
+            border-radius: 2.5rem;
+        }
+
+        .qr-container {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 0 40px rgba(250, 204, 21, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<header class="bg-black/90 backdrop-blur-md p-4 border-b border-yellow-500/20 sticky top-0 z-50 text-left">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
+        <div class="flex flex-col">
+            <h1 class="text-2xl font-black italic text-yellow-500 leading-none">सारथी</h1>
+            <p class="text-[8px] uppercase tracking-[0.3em] text-gray-400 mt-1 font-bold italic">विजयाचा आधुनिक साथीदार</p>
+        </div>
+        <a href="workshop.html" class="text-xs font-bold uppercase text-gray-500 hover:text-yellow-500 transition">← मागे जा</a>
+    </div>
+</header>
+
+<main class="py-16 px-4 max-w-2xl mx-auto">
+
+    <section class="text-center">
+        <h2 class="text-4xl font-black uppercase italic gold-text mb-4">कार्यशाळा शुल्क भरणा</h2>
+        <p class="text-gray-400 mb-8 italic">"तुमच्या विजयासाठीची ही पहिली गुंतवणूक आहे."</p>
+
+        <div class="glass-card p-8 md:p-12 shadow-2xl">
+            
+            <div class="mb-10 text-left space-y-4 border-b border-white/5 pb-8">
+                <div class="flex justify-between text-gray-300 font-bold">
+                    <span>प्रशिक्षण शुल्क:</span>
+                    <span>₹ 2,100.00</span>
+                </div>
+                <div class="flex justify-between text-gray-400 text-sm italic">
+                    <span>GST (18%):</span>
+                    <span>₹ 378.00</span>
+                </div>
+                <div class="h-px bg-white/10 w-full my-4"></div>
+                <div class="flex justify-between items-center bg-yellow-500/10 p-5 rounded-2xl border border-yellow-500/20">
+                    <span class="text-lg font-black text-yellow-500 uppercase tracking-tighter">एकूण देय रक्कम:</span>
+                    <span class="text-3xl font-black text-white">₹ 2,478.00</span>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="qr-container mb-6">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi://pay?pa=7057676266@upi&pn=Sarathi%20Vision&am=2478&cu=INR"
+                         alt="UPI QR Code"
+                         class="w-52 h-52">
+                </div>
+
+                <div class="text-center">
+                    <p class="text-xs text-gray-500 uppercase font-bold tracking-widest mb-2">अधिकृत UPI ID</p>
+                    <p class="text-xl font-black text-yellow-500 tracking-tighter">7057676266@upi</p>
+                </div>
+
+                <div class="flex flex-col space-y-4 pt-6">
+                    <a href="upi://pay?pa=7057676266@upi&pn=Sarathi%20Vision&am=2478&cu=INR"
+                       class="bg-white text-black px-8 py-4 rounded-xl font-black text-lg uppercase shadow-xl hover:bg-yellow-500 transition flex items-center justify-center">
+                        📲 UPI APP द्वारे भरा
+                    </a>
+
+                    <a href="https://wa.me/919359435183?text=नमस्कार,%20मी%20सारथी%20कार्यशाळेसाठी%20₹2478%20भरले%20आहेत.%20हा%20माझा%20पेमेंट%20स्क्रीनशॉट%20आहे."
+                       target="_blank"
+                       class="bg-green-600 text-white px-8 py-4 rounded-xl font-black text-lg uppercase shadow-xl hover:bg-green-500 transition flex items-center justify-center">
+                        ✉️ स्क्रीनशॉट पाठवा
+                    </a>
+                </div>
+
+                <p class="mt-8 text-[10px] text-gray-500 italic uppercase leading-relaxed font-bold">
+                    नोंदणी शुल्क भरल्यानंतर व्हॉट्सॲपवर स्क्रीनशॉट पाठवणे बंधनकारक आहे. <br>
+                    प्रवेश निश्चितीचा संदेश तुम्हाला २४ तासांच्या आत मिळेल.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="py-10 text-center opacity-50 text-[10px] uppercase font-bold italic">
+    © 2026 सारथी व्हिजन | डॉ. गणेश पाटील उपक्रम
+</footer>
+
+</body>
+</html>
