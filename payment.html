@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>शुल्क भरणा | सारथी - विजयाचे आधुनिक महातंत्र</title>
+    <title>सेवा | सारथी - विजयाचे आधुनिक महातंत्र</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -13,6 +13,7 @@
             background-color: #020617; 
             color: white; 
             overflow-x: hidden; 
+            scroll-behavior: smooth;
         }
 
         .gold-text {
@@ -22,94 +23,165 @@
         }
 
         .glass-card {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(250, 204, 21, 0.2);
-            border-radius: 2.5rem;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(250, 204, 21, 0.1);
+            transition: 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: #facc15;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(250, 204, 21, 0.2);
         }
 
-        .qr-container {
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
+        .glow-text-gold {
+            text-shadow: 0 0 25px rgba(250, 204, 21, 0.8);
+        }
+
+        .section-line {
+            height: 6px;
+            width: 160px;
+            background: #facc15;
+            margin: 15px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #facc15;
+        }
+
+        .package-badge {
+            background: linear-gradient(45deg, #facc15, #ea580c);
+            color: black;
+            padding: 4px 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 10px;
+            text-transform: uppercase;
             display: inline-block;
-            box-shadow: 0 0 40px rgba(250, 204, 21, 0.3);
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
-<header class="bg-black/90 backdrop-blur-md p-4 border-b border-yellow-500/20 sticky top-0 z-50 text-left">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
+<header class="fixed w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-yellow-500/20">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-6">
         <div class="flex flex-col">
-            <h1 class="text-2xl font-black italic text-yellow-500 leading-none">सारथी</h1>
-            <p class="text-[8px] uppercase tracking-[0.3em] text-gray-400 mt-1 font-bold italic">विजयाचा आधुनिक साथीदार</p>
+            <h1 class="text-3xl font-black italic text-yellow-500 tracking-tighter leading-none">सारथी</h1>
+            <p class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mt-1 font-bold italic">विजयाचा आधुनिक साथीदार</p>
         </div>
-        <a href="workshop.html" class="text-xs font-bold uppercase text-gray-500 hover:text-yellow-500 transition">← मागे जा</a>
+        <nav class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest text-gray-300">
+            <a href="index.html" class="hover:text-yellow-500 transition">मुख्य</a>
+            <a href="about.html" class="hover:text-yellow-500 transition">आमच्याबद्दल</a>
+            <a href="services.html" class="text-yellow-500 border-b-2 border-yellow-500 pb-1">सेवा</a>
+            <a href="contacts.html" class="hover:text-yellow-500 transition">संपर्क</a>
+        </nav>
+        <a href="contacts.html" class="bg-yellow-500 text-black px-8 py-2 rounded-full font-black text-xs uppercase shadow-lg shadow-yellow-500/30 hover:bg-white transition">चर्चा करूया</a>
     </div>
 </header>
 
-<main class="py-16 px-4 max-w-2xl mx-auto">
+<section class="relative pt-52 pb-36 px-4 text-center overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <img src="assets/images/gulal.png" class="w-full h-full object-cover opacity-70 transform scale-105" alt="विजयाचा गुलाल">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/90"></div>
+    </div>
 
-    <section class="text-center">
-        <h2 class="text-4xl font-black uppercase italic gold-text mb-4">कार्यशाळा शुल्क भरणा</h2>
-        <p class="text-gray-400 mb-8 italic">"तुमच्या विजयासाठीची ही पहिली गुंतवणूक आहे."</p>
+    <div class="relative z-10 max-w-7xl mx-auto">
+        <h1 class="text-5xl md:text-9xl font-black leading-tight tracking-tighter text-white drop-shadow-2xl">
+            निवडणूक जिंकण्याचे <br>
+            <span class="text-5xl md:text-9xl font-black leading-tight tracking-tighter text-white drop-shadow-2xl">महातंत्र</span>
+        </h1>
+        <div class="section-line mx-auto"></div>
+        <p class="text-gray-100 mt-10 text-lg md:text-3xl italic font-bold max-w-4xl mx-auto leading-relaxed drop-shadow-2xl px-2">
+            "आम्ही तुमच्या प्रचाराला केवळ वेग देत नाही, तर त्याला विजयाकडे नेणारी 'अचूक दिशा' देतो."
+        </p>
+    </div>
+</section>
 
-        <div class="glass-card p-8 md:p-12 shadow-2xl">
+<section class="py-24 bg-black px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             
-            <div class="mb-10 text-left space-y-4 border-b border-white/5 pb-8">
-                <div class="flex justify-between text-gray-300 font-bold">
-                    <span>प्रशिक्षण शुल्क:</span>
-                    <span>₹ 2,100.00</span>
-                </div>
-                <div class="flex justify-between text-gray-400 text-sm italic">
-                    <span>GST (18%):</span>
-                    <span>₹ 378.00</span>
-                </div>
-                <div class="h-px bg-white/10 w-full my-4"></div>
-                <div class="flex justify-between items-center bg-yellow-500/10 p-5 rounded-2xl border border-yellow-500/20">
-                    <span class="text-lg font-black text-yellow-500 uppercase tracking-tighter">एकूण देय रक्कम:</span>
-                    <span class="text-3xl font-black text-white">₹ 2,478.00</span>
-                </div>
+            <div class="glass-card p-10 rounded-[3rem] border-2 border-yellow-500 relative overflow-hidden group shadow-2xl shadow-yellow-500/20">
+                <div class="package-badge">Most Important</div>
+                <div class="text-yellow-500 text-5xl mb-6">🎓</div>
+                <h3 class="text-2xl font-black text-white uppercase italic mb-4">प्रशिक्षण कार्यशाळा</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">कार्यकर्त्यांना आणि उमेदवारांना रणांगणासाठी तयार करण्यासाठी विशेष प्रशिक्षण
+</p>
+                <ul class="text-gray-300 text-[10px] space-y-3 font-black uppercase tracking-widest border-t border-white/10 pt-6">
+                    <li>✅ प्रभावी भाषण कला</li>
+                    <li>✅ बूथ व्यवस्थापन प्रशिक्षण</li>
+                    <li>✅ जनसंपर्क आणि संवाद तंत्र</li>
+                    <li>✅ सोशल मीडियाचा वापर</li>
+                </ul>
             </div>
 
-            <div class="space-y-6">
-                <div class="qr-container mb-6">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi://pay?pa=7057676266@upi&pn=Sarathi%20Vision&am=2478&cu=INR"
-                         alt="UPI QR Code"
-                         class="w-52 h-52">
-                </div>
-
-                <div class="text-center">
-                    <p class="text-xs text-gray-500 uppercase font-bold tracking-widest mb-2">अधिकृत UPI ID</p>
-                    <p class="text-xl font-black text-yellow-500 tracking-tighter">7057676266@upi</p>
-                </div>
-
-                <div class="flex flex-col space-y-4 pt-6">
-                    <a href="upi://pay?pa=7057676266@upi&pn=Sarathi%20Vision&am=2478&cu=INR"
-                       class="bg-white text-black px-8 py-4 rounded-xl font-black text-lg uppercase shadow-xl hover:bg-yellow-500 transition flex items-center justify-center">
-                        📲 UPI APP द्वारे भरा
-                    </a>
-
-                    <a href="https://wa.me/919359435183?text=नमस्कार,%20मी%20सारथी%20कार्यशाळेसाठी%20₹2478%20भरले%20आहेत.%20हा%20माझा%20पेमेंट%20स्क्रीनशॉट%20आहे."
-                       target="_blank"
-                       class="bg-green-600 text-white px-8 py-4 rounded-xl font-black text-lg uppercase shadow-xl hover:bg-green-500 transition flex items-center justify-center">
-                        ✉️ स्क्रीनशॉट पाठवा
-                    </a>
-                </div>
-
-                <p class="mt-8 text-[10px] text-gray-500 italic uppercase leading-relaxed font-bold">
-                    नोंदणी शुल्क भरल्यानंतर व्हॉट्सॲपवर स्क्रीनशॉट पाठवणे बंधनकारक आहे. <br>
-                    प्रवेश निश्चितीचा संदेश तुम्हाला २४ तासांच्या आत मिळेल.
-                </p>
+            <div class="glass-card p-10 rounded-[3rem] group">
+                <div class="package-badge">Special Package</div>
+                <div class="text-yellow-500 text-5xl mb-6">🚩</div>
+                <h3 class="text-2xl font-black text-white uppercase italic mb-4">सरपंच सारथी</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">ग्रामपंचायत निवडणुकीसाठी खास तयार केलेले 'ऑल-इन-वन' पॅकेज .</p>
+                <ul class="text-gray-300 text-[10px] space-y-3 font-black uppercase tracking-widest border-t border-white/10 pt-6">
+                    <li>✅ गावचा डिजिटल सर्व्हे</li>
+                    <li>✅ वैयक्तिक उमेदवार ॲप</li>
+                    <li>✅ व्हॉट्सॲप मार्केटिंग</li>
+                    <li>✅ डिजिटल जाहीरनामा</li>
+                </ul>
             </div>
+
+            <div class="glass-card p-10 rounded-[3rem] group">
+                <div class="text-yellow-500 text-5xl mb-6">⚔️</div>
+                <h3 class="text-2xl font-black text-white uppercase italic mb-4">डिजिटल वॉर रूम</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">निवडणुकीच्या हालचालीवर २४/७ लक्ष ठेवणारे आधुनिक नियंत्रण केंद्र .</p>
+                <ul class="text-gray-300 text-[10px] space-y-3 font-black uppercase tracking-widest border-t border-white/10 pt-6">
+                    <li>✅ विरोधक विश्लेषण</li>
+                    <li>✅ रिअल-टाइम डेटा मॅनेजमेंट</li>
+                    <li>✅ आपत्कालीन प्रतिसाद टीम</li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-10 rounded-[3rem] group">
+                <div class="text-yellow-500 text-5xl mb-6">📊</div>
+                <h3 class="text-2xl font-black text-white uppercase italic mb-4">मतदार विश्लेषण</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">समीकरणे ओळखून विजयाचा अचूक मार्ग निश्चित करा.</p>
+                <ul class="text-gray-300 text-[10px] space-y-3 font-black uppercase tracking-widest border-t border-white/10 pt-6">
+                    <li>✅ बुथ लेव्हल सूक्ष्म नियोजन</li>
+                    <li>✅ पॉकेट व्होटर ओळख</li>
+                    <li>✅ डिजिटल कल चाचणी (Surveys)</li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-10 rounded-[3rem] group">
+                <div class="text-yellow-500 text-5xl mb-6">📢</div>
+                <h3 class="text-2xl font-black text-white uppercase italic mb-4">डिजिटल प्रचार</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">तुमचे विचार मतदारांच्या मोबाईलपर्यंत पोहोचवणारी सोशल मीडिया मोहीम. </p>
+                <ul class="text-gray-300 text-[10px] space-y-3 font-black uppercase tracking-widest border-t border-white/10 pt-6">
+                    <li>✅ प्रोफेशनल व्हिडिओ</li>
+                    <li>✅ फेसबुक व इंस्टाग्राम कॅम्पेन</li>
+                    <li>✅ पर्सनल ब्रँडिंग</li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-10 rounded-[3rem] group">
+                <div class="text-yellow-500 text-5xl mb-6">🎤</div>
+                <h3 class="text-2xl font-black text-white uppercase italic mb-4">सभा नियोजन</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">जाहीर सभा आणि रॅलींचे आधुनिक पद्धतीने व्यवस्थापन .</p>
+                <ul class="text-gray-300 text-[10px] space-y-3 font-black uppercase tracking-widest border-t border-white/10 pt-6">
+                    <li>✅ रॅली रूट मॅपिंग</li>
+                    <li>✅ सभा गर्दी नियोजन</li>
+                    <li>✅ स्टेज व इव्हेंट ब्रँडिंग</li>
+                </ul>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-</main>
-
-<footer class="py-10 text-center opacity-50 text-[10px] uppercase font-bold italic">
-    © 2026 सारथी व्हिजन | डॉ. गणेश पाटील उपक्रम
+<footer class="py-16 text-center border-t border-yellow-900/20 bg-slate-950">
+    <div class="flex flex-col items-center">
+        <span class="text-4xl font-black italic text-yellow-600 tracking-tighter leading-none">सारथी</span>
+        <p class="text-gray-500 text-xs tracking-[0.5em] uppercase mt-4 font-bold italic">विजयाचा आधुनिक साथीदार</p>
+        <div class="h-px w-24 bg-yellow-900/30 my-8"></div>
+        <p class="text-gray-700 text-[10px] tracking-widest uppercase font-bold italic">© 2026 सारथी व्हिजन | डॉ. गणेश पाटील उपक्रम</p>
+    </div>
 </footer>
 
 </body>
