@@ -127,25 +127,25 @@
 
         <div class="glass-card p-10 md:p-12 rounded-[3rem]">
             <h3 class="text-3xl font-black text-white uppercase italic mb-8">नोंदणी करा</h3>
-            <form action="#" method="POST" class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" placeholder="पूर्ण नाव" class="form-input" required>
-                    <input type="text" placeholder="मोबाईल नंबर" class="form-input" required>
-                </div>
-                <input type="text" placeholder="मतदारसंघाचे नाव" class="form-input" required>
-                <select class="form-input text-gray-400">
-                    <option value="">निवडणुकीचा प्रकार निवडा</option>
-                    <option value="grampanchayat">ग्रामपंचायत [cite: 2026-02-23]</option>
-                    <option value="zilla-parishad">जिल्हा परिषद</option>
-                    <option value="vidhansabha">विधानसभा</option>
-                    <option value="others">इतर</option>
-                </select>
-                <textarea rows="4" placeholder="तुमचा संदेश किंवा प्रश्न..." class="form-input"></textarea>
-                
-                <button type="submit" class="w-full bg-yellow-500 text-black py-4 rounded-xl font-black text-xl uppercase tracking-widest shadow-xl shadow-yellow-500/30 hover:bg-white transition duration-300">
-                    विजयाचा रथ ओढा →
-                </button>
-            </form>
+         <form id="contactForm" class="space-y-6">
+    <div class="grid md:grid-cols-2 gap-6">
+        <input type="text" name="Full Name" placeholder="पूर्ण नाव" class="form-input" required>
+        <input type="text" name="Mobile" placeholder="मोबाईल नंबर" class="form-input" required>
+    </div>
+    <input type="text" name="Constituency" placeholder="मतदारसंघाचे नाव" class="form-input" required>
+    <select name="Election Type" class="form-input text-gray-400">
+        <option value="">निवडणुकीचा प्रकार निवडा</option>
+        <option value="grampanchayat">ग्रामपंचायत</option>
+        <option value="zilla-parishad">जिल्हा परिषद</option>
+        <option value="vidhansabha">विधानसभा</option>
+        <option value="others">इतर</option>
+    </select>
+    <textarea name="Message" rows="4" placeholder="तुमचा संदेश किंवा प्रश्न..." class="form-input"></textarea>
+    
+    <button type="submit" id="submitBtn" class="w-full bg-yellow-500 text-black py-4 rounded-xl font-black text-xl uppercase tracking-widest shadow-xl shadow-yellow-500/30 hover:bg-white transition duration-300">
+        विजयाचा रथ ओढा →
+    </button>
+</form>
         </div>
 
     </div>
@@ -159,8 +159,38 @@
         <p class="text-gray-700 text-[10px] tracking-widest uppercase font-bold italic">© 2026 सारथी व्हिजन | डॉ. गणेश पाटील उपक्रम</p>
     </div>
 </footer>
+<script>
+    // तुमची दिलेली Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwffHTiecbW_v_51BsijttBoQs3IwSto7Ny0wHjX8xI-Y63FBPli8Rvg1LvMW_6MV9s/exec'; 
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('submitBtn');
 
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerHTML = "नोंदणी होत आहे...";
+
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: new FormData(form)
+        })
+        .then(response => {
+            alert("तुमची नोंदणी यशस्वी झाली आहे! 'सारथी व्हिजन' टीम तुमच्याशी लवकरच संपर्क करेल.");
+            form.reset();
+            btn.disabled = false;
+            btn.innerHTML = "विजयाचा रथ ओढा →";
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert("काहीतरी तांत्रिक अडचण आली आहे, कृपया पुन्हा प्रयत्न करा.");
+            btn.disabled = false;
+            btn.innerHTML = "विजयाचा रथ ओढा →";
+        });
+    });
+</script>
+    
 </body>
 
 </html>
+
 
